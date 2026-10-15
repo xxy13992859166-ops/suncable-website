@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JunlinChicheng | PV Cable & Solar Component Manufacturer</title>
+<meta name="description" content="JunlinChicheng Metal Products Group Co., Ltd. - Leading China PV cable manufacturer with 20+ years experience. TUV UL CE certified solar DC cables, MC4 connectors, PV modules, inverters, mounting systems.">
+<meta name="google-site-verification" content="Ogx99dLWi5cXJqK2zHL3soSlIwABTec8PV7G_bRdM6A" />
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#1a5276;--primary-light:#2980b9;--accent:#e67e22;--dark:#0d1b2a;--gray-100:#f7f8fa;--gray-200:#e8ecef;--gray-600:#5a6a7a;--white:#fff;--radius:12px;--shadow:0 4px 20px rgba(0,0,0,.08)}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--dark);line-height:1.6;overflow-x:hidden}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+a{text-decoration:none;color:inherit}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-200);padding:0 24px;height:64px;display:flex;align-items:center}
+.nav-inner{max-width:1200px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:var(--dark)}
+.logo img{width:36px;height:36px;object-fit:contain;border-radius:8px}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:14px;font-weight:500;color:var(--gray-600);transition:color .2s}
+.nav-links a:hover{color:var(--primary)}
+.nav-right{display:flex;align-items:center;gap:16px}
+.lang-switch{font-size:13px;color:var(--gray-600);padding:6px 12px;border:1px solid var(--gray-200);border-radius:8px}
+.nav-cta{background:var(--primary);color:var(--white);padding:8px 20px;border-radius:8px;font-size:14px;font-weight:600;transition:all .2s}
+.nav-cta:hover{background:var(--primary-light);transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--dark);border-radius:2px}
+.mobile-menu{position:fixed;top:64px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--gray-200);padding:24px;display:none;flex-direction:column;gap:16px;z-index:99;box-shadow:var(--shadow)}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:16px;font-weight:500;color:var(--gray-800);padding:8px 0;border-bottom:1px solid var(--gray-100)}
+.hero{background:linear-gradient(135deg,#0d1b2a 0%,#1a5276 50%,#2980b9 100%);padding:140px 24px 100px;position:relative;overflow:hidden;width:100%}
+.hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);padding:6px 16px;border-radius:100px;font-size:13px;color:rgba(255,255,255,.8);margin-bottom:24px}
+.hero-badge-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:clamp(28px,4vw,48px);font-weight:800;color:var(--white);line-height:1.15;margin-bottom:20px}
+.hero h1 span{color:var(--accent)}
+.hero p{font-size:17px;color:rgba(255,255,255,.65);max-width:520px;margin-bottom:32px;line-height:1.7}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;font-size:15px;font-weight:600;transition:all .2s;border:none;cursor:pointer}
+.btn-primary{background:var(--accent);color:var(--white)}
+.btn-primary:hover{background:#d35400;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,.3)}
+.btn-outline:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.6)}
+.hero-stats{display:flex;gap:36px}
+.hero-stat-num{font-size:32px;font-weight:800;color:var(--white);line-height:1}
+.hero-stat-label{font-size:13px;color:rgba(255,255,255,.5);margin-top:4px}
+.hero-visual{display:flex;justify-content:center}
+.hero-cable-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:32px;backdrop-filter:blur(10px);max-width:340px}
+.cable-visual{width:100%;aspect-ratio:5/3;background:rgba(255,255,255,.05);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.cable-specs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cable-spec-label{font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.5px}
+.cable-spec-value{font-size:14px;color:var(--white);font-weight:600}
+.section{padding:100px 24px}
+.section-alt{background:linear-gradient(135deg,#0d1b2a,#1a5276);color:var(--white)}
+.section-header{text-align:center;margin-bottom:56px}
+.section-tag{display:inline-block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent);margin-bottom:12px}
+.section-title{font-size:clamp(24px,3vw,36px);font-weight:800;color:var(--dark);margin-bottom:12px}
+.section-alt .section-title{color:var(--white)}
+.section-desc{font-size:16px;color:var(--gray-600);max-width:600px;margin:0 auto}
+.section-alt .section-desc{color:rgba(255,255,255,.6)}
+.product-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:48px;flex-wrap:wrap}
+.product-tab{padding:10px 24px;border-radius:100px;font-size:14px;font-weight:600;background:var(--white);border:2px solid var(--gray-200);color:var(--gray-600);cursor:pointer;transition:all .2s}
+.product-tab:hover{border-color:var(--primary-light);color:var(--primary)}
+.product-tab.active{background:var(--primary);border-color:var(--primary);color:var(--white)}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;max-width:1200px;margin:0 auto;align-items:stretch}
+.product-card{background:var(--white);border-radius:var(--radius);border:1px solid var(--gray-200);overflow:hidden;transition:all .3s;cursor:pointer;display:flex;flex-direction:column}
+.product-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--primary-light)}
+.product-img{height:200px;background:#fff;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border-bottom:1px solid #f0f0f0;flex-shrink:0}
+.product-img img{width:100%;max-width:100%;height:200px;max-height:100%;object-fit:contain;padding:16px;transition:transform .3s;display:block}
+.product-card:hover .product-img img{transform:scale(1.05)}
+.product-card{min-height:380px}.product-img{min-height:200px;max-height:200px}
+  .product-badge{position:absolute;top:12px;right:12px;background:var(--accent);color:var(--white);font-size:11px;font-weight:700;padding:4px 10px;border-radius:100px}
+.product-body{padding:20px;flex:1;display:flex;flex-direction:column}
+.product-name{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:6px}
+.product-model{font-size:13px;color:var(--primary-light);font-weight:600;margin-bottom:12px}
+.product-desc{font-size:13px;color:var(--gray-600);margin-bottom:16px;line-height:1.6}
+.product-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.product-tag{font-size:11px;padding:3px 10px;background:var(--gray-100);color:var(--gray-600);border-radius:100px;font-weight:500}
+.product-footer{display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--gray-200);margin-top:auto}
+.product-link{font-size:14px;font-weight:600;color:var(--primary);display:flex;align-items:center;gap:4px;transition:gap .2s}
+.product-card:hover .product-link{gap:8px}
+.features-stats-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px}
+.feature-card{background:var(--white);border-radius:var(--radius);padding:32px;border:1px solid var(--gray-200);transition:all .3s}
+.feature-card:hover{border-color:var(--primary-light);box-shadow:0 4px 16px rgba(0,0,0,.06);transform:translateY(-2px)}
+.feature-icon{width:52px;height:52px;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 100%);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.feature-icon svg{width:26px;height:26px;stroke:var(--white);fill:none;stroke-width:2}
+.feature-title{font-size:17px;font-weight:700;color:var(--dark);margin-bottom:8px}
+.feature-desc{font-size:14px;color:var(--gray-600);line-height:1.7}
+.stats-inline{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:40px 0;border-top:1px solid rgba(255,255,255,.15);margin-top:40px}
+.stat-item{text-align:center}
+.stat-num{font-size:clamp(28px,4vw,48px);font-weight:800;color:var(--white);line-height:1}
+.stat-unit{font-size:20px;color:var(--accent)}
+.stat-label{font-size:14px;color:rgba(255,255,255,.6);margin-top:8px}
+.cert-row{display:flex;justify-content:center;gap:36px;flex-wrap:wrap;align-items:center}
+.cert-item{display:flex;flex-direction:column;align-items:center;gap:12px;opacity:0.6;transition:opacity .3s}
+.cert-item:hover{opacity:1}
+.cert-icon{width:72px;height:72px;background:rgba(255,255,255,0.1);border:2px solid rgba(255,255,255,0.2);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;color:var(--white)}
+.cert-name{font-size:13px;font-weight:600;color:rgba(255,255,255,0.7)}
+.cta-section{background:linear-gradient(135deg,#0d1b2a 0%,#1a5276 50%,#2980b9 100%);padding:100px 24px;text-align:center;position:relative;overflow:hidden;width:100%}
+.cta-section::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.cta-content{position:relative;z-index:1}
+.cta-title{font-size:clamp(28px,4vw,42px);font-weight:800;color:var(--white);margin-bottom:16px}
+.cta-desc{font-size:17px;color:rgba(255,255,255,.6);max-width:480px;margin:0 auto 40px}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn-white{background:var(--white);color:var(--primary)}
+.btn-white:hover{background:var(--gray-100);transform:translateY(-2px)}
+.footer{background:var(--dark);padding:64px 24px 32px;color:rgba(255,255,255,0.6)}
+.footer-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08)}
+.footer-brand .logo{display:flex;align-items:center;gap:12px;margin-bottom:16px;color:var(--white)}
+.footer-brand .logo img{width:48px;height:48px;object-fit:contain;border-radius:8px}
+.footer-brand .logo-text{font-size:14px;font-weight:700;line-height:1.4;color:var(--white)}
+.footer-brand p{font-size:13px;line-height:1.8;color:rgba(255,255,255,0.5);max-width:280px}
+.footer-col-title{font-size:14px;font-weight:700;color:var(--white);margin-bottom:16px}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:14px;color:rgba(255,255,255,0.5);transition:color .2s}
+.footer-links a:hover{color:var(--accent)}
+.footer-bottom{max-width:1200px;margin:0 auto;padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:13px;flex-wrap:wrap;gap:12px}
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:200;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.wa-tooltip{background:var(--white);color:var(--gray-800);font-size:13px;font-weight:600;padding:8px 14px;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.15);white-space:nowrap;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s;pointer-events:none}
+.wa-float:hover .wa-tooltip{opacity:1;transform:translateY(0)}
+.wa-btn{width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s;cursor:pointer;text-decoration:none;animation:wa-pulse 2.5s infinite}
+.wa-btn:hover{transform:scale(1.1);box-shadow:0 6px 28px rgba(37,211,102,.5)}
+.wa-btn svg{width:32px;height:32px;fill:white}
+@keyframes wa-pulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 32px rgba(37,211,102,.7)}}
+@media(max-width:900px){.hero-inner{grid-template-columns:1fr;text-align:center}.hero p{margin-left:auto;margin-right:auto}.hero-btns{justify-content:center}.hero-stats{justify-content:center}.hero-visual{order:-1}.nav-links{display:none}.nav-cta{display:none}.hamburger{display:flex}.features-stats-layout{grid-template-columns:1fr}.stats-inline{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.wa-float{bottom:20px;right:20px}.wa-btn{width:52px;height:52px}.wa-btn svg{width:28px;height:28px}}
+.product-card>*{max-width:100%}
+.product-img{max-height:200px;min-height:200px}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"JunlinChicheng Metal Products Group Co., Ltd.","url":"https://summer-dust-8582.xxy13992859166.workers.dev","description":"JunlinChicheng Metal Products Group Co., Ltd. - Leading China PV cable manufacturer with 20+ years experience. TUV UL CE certified solar DC cables, MC4 connectors, PV modules, inverters, mounting systems.","address":{"@type":"PostalAddress","streetAddress":"Fortune Building, Sanqiao Sub-district, Fengdong New City, Xi'an City, Shaanxi Province, P.R.China","addressCountry":"CN"},"contactPoint":{"@type":"ContactPoint","telephone":"+86-153-3900-5193","email":"xxy13992859166@gmail.com","contactType":"sales","availableLanguage":["English","Chinese"]}}
+</style></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="logo"><img src="logo.jpg" alt="JunlinChicheng Logo">JunlinChicheng Metal Products Group</a>
+    <ul class="nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#features">Why Choose Us</a></li>
+      <li><a href="#certs">Certifications</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/" class="lang-switch">中文版</a>
+      <a href="#contact" class="nav-cta">Get a Free Quote</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#products">Products</a><a href="#features">Why Choose Us</a>
+  <a href="#certs">Certifications</a><a href="#about">About Us</a>
+  <a href="#contact">Contact</a>
+  <a href="/" class="lang-switch">中文版</a>
+  <a href="#contact" class="nav-cta">Get a Free Quote</a>
+</div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge"><div class="hero-badge-dot"></div>Trusted PV Cable Manufacturer Since 2004</div>
+      <h1>PV Cable & Solar Component <span>Manufacturer</span></h1>
+      <p>Full range of TUV, UL, and CE certified solar cables, MC4 connectors, PV modules, inverters, and mounting systems. Exported to 50+ countries with 20+ years of manufacturing excellence.</p>
+      <div class="hero-btns">
+        <a href="#products" class="btn btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>View Products</a>
+        <a href="#contact" class="btn btn-outline">Request Free Samples</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="hero-stat-num">20+</div><div class="hero-stat-label">Years Experience</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">50+</div><div class="hero-stat-label">Countries Served</div></div>
+        <div class="hero-stat"><div class="hero-stat-num">5,000<span style="font-size:18px">km</span></div><div class="hero-stat-label">Annual Capacity</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-cable-card">
+        <div class="cable-visual">
+          <svg viewBox="0 0 200 120" fill="none">
+            <ellipse cx="100" cy="60" rx="90" ry="50" fill="url(#g)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <ellipse cx="100" cy="60" rx="60" ry="34" fill="rgba(26,82,118,0.6)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <ellipse cx="75" cy="48" rx="18" ry="18" fill="#e67e22" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            <ellipse cx="125" cy="48" rx="18" ry="18" fill="#e74c3c" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            <ellipse cx="100" cy="78" rx="18" ry="18" fill="#2ecc71" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+            <defs><linearGradient id="g" x1="10" y1="10" x2="190" y2="110"><stop offset="0%" stop-color="rgba(41,128,185,0.4)"/><stop offset="100%" stop-color="rgba(26,82,118,0.8)"/></linearGradient></defs>
+          </svg>
+        </div>
+        <div style="color:white;font-size:16px;font-weight:700;margin-bottom:4px">PV1-F 2.5mm Dual-Core Solar Cable</div>
+        <div style="color:rgba(255,255,255,0.5);font-size:13px;margin-bottom:16px">TÜV Certified · Weather Resistance 4 · -40°C~+120°C</div>
+        <div class="cable-specs">
+          <div class="cable-spec"><div class="cable-spec-label">Rated Voltage</div><div class="cable-spec-value">4/8kV</div></div>
+          <div class="cable-spec"><div class="cable-spec-label">Conductor</div><div class="cable-spec-value">Tinned Copper</div></div>
+          <div class="cable-spec"><div class="cable-spec-label">Insulation</div><div class="cable-spec-value">XLPO</div></div>
+          <div class="cable-spec"><div class="cable-spec-label">Standards</div><div class="cable-spec-value">TÜV / UL</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- PRODUCTS -->
+<section class="section" id="products">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Products</div>
+      <h2 class="section-title">Complete PV Cable & Solar Solutions</h2>
+      <p class="section-desc">From DC cables to PV modules and inverters — a full product lineup for every solar project requirement.</p>
+    </div>
+    <div class="product-tabs">
+      <button class="product-tab active" onclick="filterProducts('all',this)">All Products</button>
+      <button class="product-tab" onclick="filterProducts('dc',this)">DC Cables</button>
+      <button class="product-tab" onclick="filterProducts('ac',this)">AC Cables</button>
+      <button class="product-tab" onclick="filterProducts('connector',this)">Connectors</button>
+      <button class="product-tab" onclick="filterProducts('solar',this)">Solar Components</button>
+    </div>
+    <div class="products-grid" id="productsGrid">
+      <div class="product-card" data-category="dc">
+        <div class="product-img"><img src="pv1f.jpg" alt="PV1-F Solar DC Cable - Red and Black TUV UL Certified"></div>
+        <div class="product-badge">Best Seller</div>
+        <div class="product-body">
+          <div class="product-name">PV1-F Solar DC Cable</div>
+          <div class="product-model">Size: 0.5~6 mm² · 4/8kV</div>
+          <div class="product-desc">Dual-core XLPO insulated solar cable with red (+) and black (-) coloring. Rated 4/8kV, Weather Resistance 4. Operating temperature -40°C to +120°C. Tinned copper conductor.</div>
+          <div class="product-tags"><span class="product-tag">TÜV</span><span class="product-tag">UL</span><span class="product-tag">Weather 4</span></div>
+          <div class="product-footer"><span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+        </div>
+      </div>
+      <div class="product-card" data-category="dc">
+        <div class="product-img"><img src="h1zz2.jpg" alt="H1ZZ2-K Solar Cable - UL Listed PV Wire"></div>
+        <div class="product-body">
+          <div class="product-name">H1ZZ2-K Solar Cable</div>
+          <div class="product-model">Size: 4~6 mm² · 2kV</div>
+          <div class="product-desc">Single-core black XLPO insulated PV wire, UL Listed and CSA Certified for North American markets. Rated 2kV, suitable for rooftop and utility-scale solar installations.</div>
+          <div class="product-tags"><span class="product-tag">UL</span><span class="product-tag">CSA</span><span class="product-tag">Heat Resistant</span></div>
+          <div class="product-footer"><span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+        </div>
+      </div>
+      <div class="product-card" data-category="dc">
+        <div class="product-img"><img src="storage.jpg" alt="Energy Storage DC Cable - High Flexibility"></div>
+        <div class="product-badge">New</div>
+        <div class="product-body">
+          <div class="product-name">Energy Storage DC Cable</div>
+          <div class="product-model">Size: 2.5~16 mm² · 1.5/3kV</div>
+          <div class="product-desc">Special high-flexibility DC cable designed for energy storage and battery systems. Rated 1.5/3kV with 10,000+ bend cycle life. Tinned copper conductor.</div>
+          <div class="product-tags"><span class="product-tag">High Flexibility</span><span class="product-tag">Bend Resistant</span><span class="product-tag">TÜV</span></div>
+          <div class="product-footer"><span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+        </div>
+      </div>
+      <div class="product-card" data-category="ac">
+        <div class="product-img"><img src="ac_cable.jpg" alt="Solar AC Distribution Cable - LSZH CE Certified"></div>
+        <div class="product-body">
+          <div class="product-name">Solar AC Distribution Cable</div>
+          <div class="product-model">Size: 1×6~1×240 mm²</div>
+          <div class="product-desc">Single-core AC power cable with LSZH jacket for inverter output connections. Flame retardant IEC 60332-1 certified. Suitable for indoor and outdoor solar installations.</div>
+          <div class="product-tags"><span class="product-tag">LSZH</span><span class="product-tag">Flame Retardant</span><span class="product-tag">CE</span></div>
+          <div class="product-footer"><span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+        </div>
+      </div>
+      <div class="product-card" data-category="connector">
+        <div class="product-img"><img src="mc4.jpg" alt="MC4 Solar Connector - IP68 Waterproof"></div>
+        <div class="product-body">
+          <div class="product-name">MC4 Solar Connector</div>
+          <div class="product-model">Size: 2.5/4 mm² · IP68</div>
+          <div class="product-desc">MC4-compatible solar connectors with IP68 waterproof sealing. Quick push-lock design for tool-free installation. Rated 1000V DC / 30A, UV resistant polymer housing.</div>
+          <div class="product-tags"><span class="product-tag">IP68</span><span class="product-tag">Quick Connect</span><span class="product-tag">TÜV</span></div>
+          <div class="product-footer"><span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+        </div>
+      </div>
+      <div class="product-card" data-category="connector">
+        <div class="product-img"><img src="mc4ext.jpg" alt="MC4 Adapter Extension Cable"></div>
+        <div class="product-body">
+          <div class="product-name">MC4 Adapters & Extensions</div>
+          <div class="product-model">Lengths: Multiple options</div>
+          <div class="product-desc">MC4 series adapter connectors and pre-assembled extension cables. Available in male-male, female-female, and male-female configurations. Lengths from 100mm to 1000mm.</div>
+          <div class="product-tags"><span class="product-tag">Plug & Play</span><span class="product-tag">IP68</span></div>
+          <div class="product-footer"><span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+        </div>
+      </div>
+      <div class="product-card" data-category="solar">
+        <div class="product-img"><img src="module.jpg" alt="PV Module Solar Panel"></div>
+        <div class="product-body">
+          <div class="product-name">PV Modules</div>
+          <div class="product-model">Power: 300~700W · Monocrystalline</div>
+          <div class="product-desc">High-efficiency monocrystalline PV modules for residential, commercial, and utility-scale solar installations. Available in fixed and flexible configurations.</div>
+          <div class="product-tags"><span class="product-tag">Tier 1</span><span class="product-tag">25yr Warranty</span><span class="product-tag">IP68</span></div>
+          <div class="product-footer"><span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+        </div>
+      </div>
+      <div class="product-card" data-category="solar">
+        <div class="product-img"><img src="inverter.jpg" alt="Grid-tied Solar Inverter"></div>
+        <div class="product-body">
+          <div class="product-name">Grid-tied Inverter</div>
+          <div class="product-model">Power: 1~50kW · Single/Three-phase</div>
+          <div class="product-desc">Grid-tied solar inverters with high conversion efficiency up to 98%. Smart monitoring via Wi-Fi/GPRS. Built-in arc fault protection and anti-islanding protection.</div>
+          <div class="product-tags"><span class="product-tag">98% Eff.</span><span class="product-tag">Smart Monitor</span><span class="product-tag">IP65</span></div>
+          <div class="product-footer"><span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+        </div>
+      </div>
+      <div class="product-card" data-category="solar">
+        <div class="product-img"><img src="microinverter.jpg" alt="Micro Inverter for Solar Panel"></div>
+        <div class="product-body">
+          <div class="product-name">Micro Inverter</div>
+          <div class="product-model">Power: 200~400W · Per-panel</div>
+          <div class="product-desc">Panel-level micro inverters for maximum power point tracking (MPPT). Ideal for residential rooftop systems with shading issues. Easy module-level installation.</div>
+          <div class="product-tags"><span class="product-tag">MPPT</span><span class="product-tag">97% Eff.</span><span class="product-tag">25yr</span></div>
+          <div class="product-footer"><span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+        </div>
+      </div>
+      <div class="product-card" data-category="solar">
+        <div class="product-img"><img src="rail.jpg" alt="Solar Mounting Rail System"></div>
+        <div class="product-body">
+          <div class="product-name">PV Mounting Rails</div>
+          <div class="product-model">Material: Aluminum Alloy 6005-T5</div>
+          <div class="product-desc">Heavy-duty aluminum alloy mounting rails and clips for rooftop and ground-mount solar installations. Corrosion-resistant anodized finish.</div>
+          <div class="product-tags"><span class="product-tag">Anodized</span><span class="product-tag">Wind Rated</span><span class="product-tag">Easy Install</span></div>
+          <div class="product-footer"><span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+        </div>
+      </div>
+      <div class="product-card" data-category="solar">
+        <div class="product-img"><img src="combiner.jpg" alt="Solar Combiner Box"></div>
+        <div class="product-body">
+          <div class="product-name">PV Combiner Box</div>
+          <div class="product-model">Circuits: 4~24 · IP65 Rated</div>
+          <div class="product-desc">Solar combiner boxes with integrated surge protection and fuses. Multiple input circuits combine into a single output. Outdoor-rated IP65 enclosure.</div>
+          <div class="product-tags"><span class="product-tag">SPD</span><span class="product-tag">IP65</span><span class="product-tag">Fused</span></div>
+          <div class="product-footer"><span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+        </div>
+      </div>
+      <div class="product-card" data-category="solar">
+        <div class="product-img"><img src="junctionbox.jpg" alt="Solar Junction Box"></div>
+        <div class="product-body">
+          <div class="product-name">PV Junction Box</div>
+          <div class="product-model">Circuits: 2~12 · IP68 Rated</div>
+          <div class="product-desc">Weatherproof junction boxes for solar array wiring connections. IP68 sealed terminals with strain relief. Bypass diodes available.</div>
+          <div class="product-tags"><span class="product-tag">IP68</span><span class="product-tag">Bypass Diode</span><span class="product-tag">UV Resistant</span></div>
+          <div class="product-footer"><span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section section-alt" id="features">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Why Choose Us</div>
+      <h2 class="section-title" style="color:var(--white)">Performance Excellence & Trustworthiness</h2>
+      <p class="section-desc" style="color:rgba(255,255,255,.6)">20+ years of manufacturing expertise, rigorous quality control, and global certification compliance.</p>
+    </div>
+    <div class="features-grid" style="max-width:900px;margin:0 auto">
+      <div class="feature-card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="feature-title" style="color:var(--white)">Quality Assurance</div>
+        <div class="feature-desc" style="color:rgba(255,255,255,.6)">ISO 9001 certified factory with 100% inspection before shipment.</div>
+      </div>
+      <div class="feature-card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div class="feature-title" style="color:var(--white)">Global Export</div>
+        <div class="feature-desc" style="color:rgba(255,255,255,.6)">Exported to 50+ countries with local technical support.</div>
+      </div>
+      <div class="feature-card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <div class="feature-title" style="color:var(--white)">Certified Standards</div>
+        <div class="feature-desc" style="color:rgba(255,255,255,.6)">TÜV, UL, CE, IEC certified products for global markets.</div>
+      </div>
+      <div class="feature-card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
+        <div class="feature-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <div class="feature-title" style="color:var(--white)">Fast Delivery</div>
+        <div class="feature-desc" style="color:rgba(255,255,255,.6)">15-25 day production lead time with worldwide shipping.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- NUMBERS & CERTIFICATIONS -->
+<section class="section section-alt" id="certs">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Our Scale</div>
+      <h2 class="section-title" style="color:var(--white)">Numbers That Speak</h2>
+    </div>
+    <div class="stats-inline" style="grid-template-columns:repeat(4,1fr);max-width:800px;margin:0 auto 48px">
+      <div class="stat-item"><div class="stat-num">20<span class="stat-unit">+</span></div><div class="stat-label">Years Experience</div></div>
+      <div class="stat-item"><div class="stat-num">50<span class="stat-unit">+</span></div><div class="stat-label">Countries Served</div></div>
+      <div class="stat-item"><div class="stat-num">5000<span class="stat-unit">km</span></div><div class="stat-label">Annual Output</div></div>
+      <div class="stat-item"><div class="stat-num">1000<span class="stat-unit">+</span></div><div class="stat-label">Global Clients</div></div>
+    </div>
+    <div style="text-align:center">
+      <div style="font-size:13px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:24px">Certifications</div>
+      <div class="cert-row">
+        <div class="cert-item"><div class="cert-icon">TÜV</div><div class="cert-name">TÜV Certified</div></div>
+        <div class="cert-item"><div class="cert-icon">UL</div><div class="cert-name">UL Listed</div></div>
+        <div class="cert-item"><div class="cert-icon">CE</div><div class="cert-name">CE Marked</div></div>
+        <div class="cert-item"><div class="cert-icon">ISO</div><div class="cert-name">ISO 9001</div></div>
+        <div class="cert-item"><div class="cert-icon">IEC</div><div class="cert-name">IEC Standard</div></div>
+      </div>
+    </div>
+  </div>
+</section><!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-content">
+    <h2 class="cta-title">Ready to Power Your Solar Project?</h2>
+    <p class="cta-desc">Get a free quote for PV cables, connectors, and solar components. Our team responds within 24 hours.</p>
+    <div class="cta-btns">
+      <a href="mailto:xxy13992859166@gmail.com" class="btn btn-primary">Email Us</a>
+      <a href="https://wa.me/8615339005193" target="_blank" class="btn btn-outline">WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo"><img src="logo.jpg" alt="Logo"><span class="logo-text">JunlinChicheng<br>Metal Products Group</span></div>
+      <p>Leading PV cable and solar component manufacturer since 2004. TÜV, UL, CE certified. Exporting to 50+ countries worldwide.</p>
+      <p style="margin-top:16px;font-size:12px;color:rgba(255,255,255,0.4)">Fortune Building, Sanqiao Sub-district,<br>Fengdong New City, Xi'an City,<br>Shaanxi Province, P.R.China</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Products</div>
+      <ul class="footer-links">
+        <li><a href="#products">PV DC Cables</a></li>
+        <li><a href="#products">AC Distribution Cables</a></li>
+        <li><a href="#products">MC4 Connectors</a></li>
+        <li><a href="#products">PV Modules</a></li>
+        <li><a href="#products">Inverters</a></li>
+        <li><a href="#products">Mounting Systems</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="#features">Why Choose Us</a></li>
+        <li><a href="#certs">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="mailto:xxy13992859166@gmail.com">xxy13992859166@gmail.com</a></li>
+        <li><a href="https://wa.me/8615339005193" target="_blank">WhatsApp: +86 153 3900 5193</a></li>
+        <li><a href="#">Xi'an, Shaanxi, China</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 JunlinChicheng Metal Products Group Co., Ltd. All rights reserved.</span>
+    <span><a href="/" style="color:rgba(255,255,255,0.4)">中文版</a></span>
+  </div>
+</footer>
+<!-- WHATSAPP FLOAT -->
+<div class="wa-float">
+  <div class="wa-tooltip">Chat with us on WhatsApp</div>
+  <a href="https://wa.me/8615339005193" target="_blank" class="wa-btn" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32"><path d="M16.004 6.78c-4.96 0-9 4.04-9 9.01 0 1.6.42 3.15 1.22 4.52l-.6 2.2 2.28-.6c1.34.78 2.86 1.2 4.42 1.2h.01c4.96 0 9-4.04 9-9.01s-4.04-9.01-9-9.01zM16 22.5c-1.38 0-2.73-.37-3.9-1.07l-2.77.72.74-2.7c-.75-1.2-1.15-2.56-1.15-3.97 0-4.84 3.95-8.78 8.78-8.78 4.84 0 8.78 3.95 8.78 8.78 0 4.84-3.95 8.78-8.78 8.78zm4.4-6.46c-.26-.13-1.54-.76-1.78-.85-.24-.09-.41-.13-.59.13-.18.26-.69.85-.85 1.03-.15.18-.31.2-.57.07-.26-.13-1.1-.41-2.1-1.3-.78-.7-1.3-1.56-1.46-1.82-.15-.26-.02-.4.11-.53.12-.12.26-.31.4-.47.13-.15.18-.26.26-.43.09-.18.04-.33-.02-.47-.05-.13-.6-1.45-.82-1.99-.21-.52-.43-.45-.59-.46l-.5-.02c-.18 0-.45.07-.69.33-.24.26-.92.9-.92 2.18s.94 2.52 1.07 2.69c.13.18 1.86 2.84 4.5 3.98.63.27 1.12.44 1.5.56.38.17.72.26 1.02.33.44.12 1.16.2 1.68.12.51-.08 1.54-.63 1.76-1.24.21-.6.21-1.12.15-1.24-.06-.11-.21-.18-.47-.31z"/></svg>
+  </a>
+</div>
+<script>
+function filterProducts(category,btn){
+  document.querySelectorAll('.product-tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.product-card').forEach(card=>{
+    const show=category==='all'||card.dataset.category===category;
+    card.style.display=show?'':'none';
+  });
+}
+document.getElementById('hamburger').addEventListener('click',function(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+});
+document.querySelectorAll('.mobile-menu a').forEach(a=>{
+  a.addEventListener('click',function(){
+    document.getElementById('mobileMenu').classList.remove('open');
+  });
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
