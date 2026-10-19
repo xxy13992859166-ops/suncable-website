@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://exquisite-eclair-ceff40.netlify.app/sitemap.xml
+Sitemap: https://xxy13992859166-ops.github.io/suncable-website/sitemap.xml
