@@ -378,10 +378,24 @@
   }
   }
   .footer-col-title {
+  }.footer-logo {
+    display: flex; align-items: flex-start; gap: 12px;
+    margin-bottom: 16px;
   }
-  .footer-brand .logo { 
-    display: flex; align-items: center; gap: 12px; 
-    margin-bottom: 16px; color: var(--white); 
+  .footer-logo img {
+    width: 48px; height: 48px; object-fit: contain; border-radius: 8px; flex-shrink: 0;
+  }
+  .footer-company-name {
+    font-size: 15px; font-weight: 700; line-height: 1.4;
+    color: var(--white); white-space: nowrap;
+  }
+  .footer-brand p {
+    font-size: 13px; line-height: 1.8; color: rgba(255,255,255,0.5);
+    max-width: 280px; margin-bottom: 16px;
+  }
+  .footer-contact {
+    display: flex; flex-direction: column; gap: 6px;
+    font-size: 12px; color: rgba(255,255,255,0.4);
   }
   .footer-brand .logo img { 
     width: 48px; height: 48px; object-fit: contain; border-radius: 8px; 
@@ -611,6 +625,7 @@
       <button class="product-tab" onclick="filterProducts('dc', this)">直流电缆</button>
       <button class="product-tab" onclick="filterProducts('ac', this)">交流电缆</button>
       <button class="product-tab" onclick="filterProducts('connector', this)">连接器配件</button>
+      <button class="product-tab" onclick="filterProducts('solar', this)">光伏产品</button>
     </div>
     <div class="products-grid" id="productsGrid">
       <!-- Product 1 -->
@@ -717,6 +732,109 @@
         </div>
       </div>
     </div>
+      <!-- Solar Product 1 -->
+      <div class="product-card" data-category="solar">
+        <div class="product-img"><img src="images/module.jpg" alt="太阳能光伏组件 - 单晶硅双面580W TUV认证"></div>
+        <div class="product-badge">热销</div>
+        <div class="product-body">
+          <div class="product-name">太阳能光伏组件</div>
+          <div class="product-model">功率：450~670W · N型双面</div>
+          <div class="product-desc">高效单晶双面光伏组件，采用抗PID技术和半电池设计。通过TÜV和UL认证，适用于工商业和大型地面光伏电站。</div>
+          <div class="product-tags">
+            <span class="product-tag">TÜV</span>
+            <span class="product-tag">UL</span>
+            <span class="product-tag">双面发电</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-link">了解详情 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <!-- Solar Product 2 -->
+      <div class="product-card" data-category="solar">
+        <div class="product-img"><img src="images/inverter.jpg" alt="并网逆变器 - 5~50kW 三相 CE认证"></div>
+        <div class="product-body">
+          <div class="product-name">并网逆变器</div>
+          <div class="product-model">功率：5~50kW · IP66</div>
+          <div class="product-desc">三相string逆变器，配备双MPPT追踪器和内置WiFi监控。转换效率高达98.6%，CE/TÜV认证。</div>
+          <div class="product-tags">
+            <span class="product-tag">CE</span>
+            <span class="product-tag">TÜV</span>
+            <span class="product-tag">WiFi监控</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-link">了解详情 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <!-- Solar Product 3 -->
+      <div class="product-card" data-category="solar">
+        <div class="product-img"><img src="images/microinverter.jpg" alt="微型逆变器 - 400W MPPT IP67"></div>
+        <div class="product-body">
+          <div class="product-name">微型逆变器</div>
+          <div class="product-model">功率：300~500W · MPPT · IP67</div>
+          <div class="product-desc">组件级MPPT微型逆变器，适用于住宅屋顶光伏系统。每块组件独立运行实现最大发电量。UL 1741 SB认证。</div>
+          <div class="product-tags">
+            <span class="product-tag">UL</span>
+            <span class="product-tag">MPPT</span>
+            <span class="product-tag">智能监控</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-link">了解详情 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <!-- Solar Product 4 -->
+      <div class="product-card" data-category="solar">
+        <div class="product-img"><img src="images/rail.jpg" alt="光伏支架导轨 - 铝合金SS400"></div>
+        <div class="product-body">
+          <div class="product-name">光伏支架导轨系统</div>
+          <div class="product-model">材质：铝合金6005-T5 / SS400</div>
+          <div class="product-desc">重型铝合金支架导轨，适用于地面、屋顶和车棚光伏安装。抗风等级60m/s，雪载3kN/m²。</div>
+          <div class="product-tags">
+            <span class="product-tag">抗风60m/s</span>
+            <span class="product-tag">雪载3kN/m²</span>
+            <span class="product-tag">易安装</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-link">了解详情 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <!-- Solar Product 5 -->
+      <div class="product-card" data-category="solar">
+        <div class="product-img"><img src="images/combiner.jpg" alt="光伏汇流箱 - 12路输入 IP65"></div>
+        <div class="product-body">
+          <div class="product-name">光伏汇流箱</div>
+          <div class="product-model">路数：6/8/12/16路 · IP65</div>
+          <div class="product-desc">光伏汇流箱配备浪涌保护器(SPD)和直流断路器。多种输入配置可选，IP65防护等级。</div>
+          <div class="product-tags">
+            <span class="product-tag">SPD保护</span>
+            <span class="product-tag">IP65</span>
+            <span class="product-tag">直流断路器</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-link">了解详情 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <!-- Solar Product 6 -->
+      <div class="product-card" data-category="solar">
+        <div class="product-img"><img src="images/junctionbox.jpg" alt="光伏接线盒 - IP68防水"></div>
+        <div class="product-body">
+          <div class="product-name">光伏接线盒</div>
+          <div class="product-model">IP68 · 含旁路二极管</div>
+          <div class="product-desc">防水光伏接线盒用于光伏组件串连接。内置旁路二极管防止热斑效应，IP68防护等级。</div>
+          <div class="product-tags">
+            <span class="product-tag">IP68</span>
+            <span class="product-tag">旁路二极管</span>
+            <span class="product-tag">抗UV</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-link">了解详情 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </div>
+      </div>
 <!-- FEATURES -->
 <section class="section section-alt" id="features">
   <div class="container">
@@ -867,36 +985,41 @@
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="logo">
-        <img src="images/logo.jpg" alt="Logo">
-        <span class="logo-text">君林驰诚金属制品集团有限公司</span>
+      <div class="footer-logo">
+        <img src="images/logo.jpg" alt="JunlinChicheng Logo">
+        <div class="footer-company-name">JunlinChicheng<br>Metal Products Group Co., Ltd.</div>
       </div>
       <p>专注光伏直流电缆研发与制造二十年，为全球可再生能源项目提供安全可靠的电气连接解决方案。</p>
+      <div class="footer-contact">
+        <span>xxy13992859166@gmail.com</span>
+        <span>+86 153 3900 5193</span>
+      </div>
     </div>
-    <div>
+    <div class="footer-col">
       <div class="footer-col-title">产品中心</div>
       <ul class="footer-links">
-        <li><a href="#">PV1-F 光伏电缆</a></li>
-        <li><a href="#">H1ZZ2-K 光伏电缆</a></li>
-        <li><a href="#">储能直流电缆</a></li>
-        <li><a href="#">MC4 连接器</a></li>
-        <li><a href="#">交流配电电缆</a></li>
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#products">PV1-F 光伏电缆</a></li>
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#products">H1ZZ2-K 光伏电缆</a></li>
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#products">储能直流电缆</a></li>
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#products">MC4 连接器</a></li>
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#products">光伏组件</a></li>
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#products">并网逆变器</a></li>
       </ul>
     </div>
-    <div>
+    <div class="footer-col">
       <div class="footer-col-title">关于我们</div>
       <ul class="footer-links">
-        <li><a href="#">公司简介</a></li>
-        <li><a href="#">生产车间</a></li>
-        <li><a href="#">质量检测</a></li>
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#features">公司简介</a></li>
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#features">生产车间</a></li>
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#features">质量检测</a></li>
         <li><a href="#">合作案例</a></li>
         <li><a href="#">招聘信息</a></li>
       </ul>
     </div>
-    <div>
+    <div class="footer-col">
       <div class="footer-col-title">支持与服务</div>
       <ul class="footer-links">
-        <li><a href="#">技术选型</a></li>
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/blog-pv-cable-selection-guide.html">产品选型</a></li>
         <li><a href="#">下载中心</a></li>
         <li><a href="/zh/faq/">常见问题</a></li>
         <li><a href="#contact">联系我们</a></li>
@@ -904,80 +1027,10 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 君林驰诚金属制品集团有限公司 版权所有</span>
-    <span>隐私政策 · 服务条款</span>
+    <span>&copy; 2026 JunlinChicheng Metal Products Group Co., Ltd. 版权所有</span>
+    <span>Fortune Building, Sanqiao Sub-district, Fengdong New City, Xi&#8217;an City, Shaanxi Province, P.R.China</span>
   </div>
-</footer>
-<script>
-// Nav scroll effect
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 10);
-});
-// Mobile menu
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-hamburger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-  const spans = hamburger.querySelectorAll('span');
-  if (mobileMenu.classList.contains('open')) {
-    spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
-    spans[1].style.opacity = '0';
-    spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
-  } else {
-    spans[0].style.transform = '';
-    spans[1].style.opacity = '';
-    spans[2].style.transform = '';
-  }
-});
-mobileMenu.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-    const spans = hamburger.querySelectorAll('span');
-    spans[0].style.transform = '';
-    spans[1].style.opacity = '';
-    spans[2].style.transform = '';
-  });
-});
-// Product filter
-function filterProducts(category, btn) {
-  document.querySelectorAll('.product-tab').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.product-card').forEach(card => {
-    const show = category === 'all' || card.dataset.category === category;
-    card.style.display = show ? '' : 'none';
-  });
-}
-// Animate stats on scroll
-const statEls = document.querySelectorAll('.stat-num');
-let statsAnimated = false;
-const statsObserver = new IntersectionObserver(entries => {
-  if (entries[0].isIntersecting && !statsAnimated) {
-    statsAnimated = true;
-    statEls.forEach(el => {
-      const target = el.textContent;
-      const numMatch = target.match(/[\d.]+/);
-      if (numMatch) {
-        const targetNum = parseFloat(numMatch[0]);
-        const suffix = target.replace(numMatch[0], '');
-        let current = 0;
-        const step = targetNum / 40;
-        const timer = setInterval(() => {
-          current += step;
-          if (current >= targetNum) {
-            current = targetNum;
-            clearInterval(timer);
-          }
-          el.innerHTML = (Number.isInteger(targetNum) ? Math.round(current) : current.toFixed(1)) + suffix.replace(/[\d.]/g, '');
-        }, 30);
-      }
-    });
-  }
-}, { threshold: 0.3 });
-document.querySelector('.stats-bar') && statsObserver.observe(document.querySelector('.stats-bar'));
-</script>
-
-<!-- WhatsApp CTA -->
+</footer><!-- WhatsApp CTA -->
 <a href="https://wa.me/8615339005193?text=Hello%2C%20I%27m%20interested%20in%20your%20PV%20cables.%20Please%20send%20me%20more%20information." target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;font-weight:600;text-decoration:none;margin:16px 0;">WhatsApp 咨询</a>
 </body>
 </html>
