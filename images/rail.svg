@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+<defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#5c4a1a"/><stop offset="100%" style="stop-color:#5c4a1a88"/></linearGradient></defs>
+<rect width="400" height="300" fill="url(#g)"/>
+<text x="200" y="130" text-anchor="middle" fill="white" font-size="48" font-family="Arial">🔩</text>
+<text x="200" y="175" text-anchor="middle" fill="white" font-size="18" font-family="Arial" font-weight="bold">Mounting Rail</text>
+<text x="200" y="200" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="12" font-family="Arial">JunlinChicheng</text>
+</svg>
