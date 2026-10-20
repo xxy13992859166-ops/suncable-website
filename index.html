@@ -393,9 +393,24 @@
     padding-bottom: 48px;
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-  .footer-brand .logo { 
-    display: flex; align-items: center; gap: 12px; 
-    margin-bottom: 16px; color: var(--white); 
+  .footer-logo {
+    display: flex; align-items: flex-start; gap: 12px;
+    margin-bottom: 16px;
+  }
+  .footer-logo img {
+    width: 48px; height: 48px; object-fit: contain; border-radius: 8px; flex-shrink: 0;
+  }
+  .footer-company-name {
+    font-size: 15px; font-weight: 700; line-height: 1.4;
+    color: var(--white); white-space: nowrap;
+  }
+  .footer-brand p {
+    font-size: 13px; line-height: 1.8; color: rgba(255,255,255,0.5);
+    max-width: 280px; margin-bottom: 16px;
+  }
+  .footer-contact {
+    display: flex; flex-direction: column; gap: 6px;
+    font-size: 12px; color: rgba(255,255,255,0.4);
   }
   .footer-brand .logo img { 
     width: 48px; height: 48px; object-fit: contain; border-radius: 8px; 
@@ -1055,23 +1070,28 @@
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="logo">
-        <img src="images/logo.jpg" alt="Logo">
-        <span class="logo-text">JunlinChicheng Metal Products Group</span>
+      <div class="footer-logo">
+        <img src="images/logo.jpg" alt="JunlinChicheng Logo">
+        <div class="footer-company-name">JunlinChicheng<br>Metal Products Group Co., Ltd.</div>
       </div>
-      <p>20+ years of PV DC cable R&D and manufacturing, providing safe and reliable electrical connection solutions for renewable energy projects worldwide.</p>
+      <p>20+ years of PV DC cable R&amp;D and manufacturing, providing safe and reliable electrical connection solutions for renewable energy projects worldwide.</p>
+      <div class="footer-contact">
+        <span>xxy13992859166@gmail.com</span>
+        <span>+86 153 3900 5193</span>
+      </div>
     </div>
-    <div>
+    <div class="footer-col">
       <div class="footer-col-title">Products</div>
       <ul class="footer-links">
         <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#products">PV1-F Solar Cable</a></li>
         <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#products">H1ZZ2-K Solar Cable</a></li>
         <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#products">Energy Storage DC Cable</a></li>
         <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#products">MC4 Connectors</a></li>
-        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#products">AC Distribution Cable</a></li>
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#products">Solar Panels</a></li>
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#products">Solar Inverters</a></li>
       </ul>
     </div>
-    <div>
+    <div class="footer-col">
       <div class="footer-col-title">Company</div>
       <ul class="footer-links">
         <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#features">About Us</a></li>
@@ -1081,10 +1101,10 @@
         <li><a href="#">Careers</a></li>
       </ul>
     </div>
-    <div>
+    <div class="footer-col">
       <div class="footer-col-title">Support</div>
       <ul class="footer-links">
-        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/blog-pv-cable-selection-guide.html">Product Selection</a></li>
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/blog-pv-cable-selection-guide.html">Product Selection Guide</a></li>
         <li><a href="#">Download Center</a></li>
         <li><a href="https://xxy13992859166-ops.github.io/suncable-website/faq.html">FAQ</a></li>
         <li><a href="#contact">Contact Us</a></li>
@@ -1092,8 +1112,8 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 JunlinChicheng Metal Products Group Co., Ltd. All rights reserved</span>
-    <span>Privacy Policy · Terms of Service</span>
+    <span>&copy; 2026 JunlinChicheng Metal Products Group Co., Ltd. All rights reserved</span>
+    <span>Fortune Building, Sanqiao Sub-district, Fengdong New City, Xi&#8217;an City, Shaanxi Province, P.R.China</span>
   </div>
 </footer>
 <!-- WHATSAPP FLOAT BUTTON -->
