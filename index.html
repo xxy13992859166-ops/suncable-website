@@ -646,11 +646,11 @@
   </div>
 </section>
 <!-- PRODUCTS -->
-<section class="section" 
+<section class="section" id="products">
   <div class="container">
     <div class="section-header">
       <div class="section-tag">Products</div>
-      <h2 class="section-title">Complete PV Cable & Solar Solutions</h2>
+      <h2 class="section-title">Complete PV Cable Solutions</h2>
       <p class="section-desc">From module-to-inverter DC connections to AC distribution — a full product lineup for every solar project requirement.</p>
     </div>
     <div class="product-tabs">
@@ -658,149 +658,420 @@
       <button class="product-tab" onclick="filterProducts('dc', this)">DC Cables</button>
       <button class="product-tab" onclick="filterProducts('ac', this)">AC Cables</button>
       <button class="product-tab" onclick="filterProducts('connector', this)">Connectors</button>
-      <button class="product-tab" onclick="filterProducts('module', this)">Solar Panels</button>
-      <button class="product-tab" onclick="filterProducts('inverter', this)">Inverters</button>
-      <button class="product-tab" onclick="filterProducts('mount', this)">Mounting</button>
-      <button class="product-tab" onclick="filterProducts('combiner', this)">Combiner Boxes</button>
-      <button class="product-tab" onclick="filterProducts('junction', this)">Junction Boxes</button>
-    </div>
     <div class="products-grid" id="productsGrid">
-      <!-- Product 1: PV1-F -->
+      <!-- Product 1 -->
       <div class="product-card" data-category="dc">
-        <div class="product-img"><img src="images/pv1f.jpg" alt="PV1-F Solar DC Cable - Red and Black TUV UL Certified"></div>
+        <div class="product-img"><img src="images/pv1f.jpg" alt="PV1-F Solar DC Cable - Red and Black TUV UL Certified Solar Cable"></div>
         <div class="product-badge">Best Seller</div>
         <div class="product-body">
           <div class="product-name">PV1-F Solar DC Cable</div>
           <div class="product-model">Size: 0.5~6 mm² · 4/8kV</div>
-          <div class="product-desc">Dual-core XLPO insulated solar cable with red (+) and black (-) coloring. Rated 4/8kV, Weather Resistance 4. Tinned copper conductor.</div>
-          <div class="product-tags"><span class="product-tag">TÜV</span><span class="product-tag">UL</span><span class="product-tag">Weather 4</span></div>
-          <div class="product-footer"><span class="product-link">Get Quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+          <div class="product-desc">Dual-core XLPO insulated solar cable with red (+) and black (-) coloring. Rated 4/8kV, Weather Resistance 4. Operating temperature -40°C to +120°C. Tinned copper conductor for superior corrosion resistance.</div>
+          <div class="product-tags">
+            <span class="product-tag">TÜV</span>
+            <span class="product-tag">UL</span>
+            <span class="product-tag">Weather 4</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
         </div>
       </div>
-      <!-- Product 2: H1ZZ2-K -->
+      <!-- Product 2 -->
       <div class="product-card" data-category="dc">
-        <div class="product-img"><img src="images/h1zz2.jpg" alt="H1ZZ2-K Solar Cable - UL Listed PV Wire"></div>
+        <div class="product-img"><img src="images/h1zz2.jpg" alt="H1ZZ2-K Solar Cable - UL Listed PV Wire TUV Certified"></div>
         <div class="product-body">
           <div class="product-name">H1ZZ2-K Solar Cable</div>
           <div class="product-model">Size: 4~6 mm² · 2kV</div>
-          <div class="product-desc">Single-core black XLPO insulated PV wire, UL Listed and CSA Certified. Rated 2kV, suitable for rooftop and utility-scale solar installations.</div>
-          <div class="product-tags"><span class="product-tag">UL</span><span class="product-tag">CSA</span><span class="product-tag">Heat Resistant</span></div>
-          <div class="product-footer"><span class="product-link">Get Quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+          <div class="product-desc">Single-core black XLPO insulated PV wire, UL Listed and CSA Certified for North American markets. Rated 2kV, suitable for rooftop and utility-scale solar installations. Meets NEC Article 690 requirements.</div>
+          <div class="product-tags">
+            <span class="product-tag">UL</span>
+            <span class="product-tag">CSA</span>
+            <span class="product-tag">Heat Resistant</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
         </div>
       </div>
-      <!-- Product 3: AC Cable -->
+      <!-- Product 3 -->
       <div class="product-card" data-category="ac">
         <div class="product-img"><img src="images/ac_cable.jpg" alt="Solar AC Distribution Cable - LSZH CE Certified"></div>
         <div class="product-body">
           <div class="product-name">Solar AC Distribution Cable</div>
           <div class="product-model">Size: 1×6~1×240 mm²</div>
-          <div class="product-desc">Single-core AC power cable with LSZH jacket for inverter output connections. Flame retardant IEC 60332-1 certified.</div>
-          <div class="product-tags"><span class="product-tag">CE</span><span class="product-tag">LSZH</span><span class="product-tag">Flame Retardant</span></div>
-          <div class="product-footer"><span class="product-link">Get Quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+          <div class="product-desc">Single-core AC power cable with LSZH (Low Smoke Zero Halogen) jacket for inverter output connections. Flame retardant IEC 60332-1 certified. Suitable for indoor and outdoor solar installations.</div>
+          <div class="product-tags">
+            <span class="product-tag">LSZH</span>
+            <span class="product-tag">Flame Retardant</span>
+            <span class="product-tag">CE</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
         </div>
       </div>
-      <!-- Product 4: Storage Cable -->
+      <!-- Product 4 -->
       <div class="product-card" data-category="dc">
-        <div class="product-img"><img src="images/storage.jpg" alt="Energy Storage DC Cable - High Flexibility"></div>
+        <div class="product-img"><img src="images/storage.jpg" alt="Energy Storage DC Cable - High Flexibility TÜV"></div>
         <div class="product-badge">New</div>
         <div class="product-body">
           <div class="product-name">Energy Storage DC Cable</div>
           <div class="product-model">Size: 2.5~16 mm² · 1.5/3kV</div>
-          <div class="product-desc">Special high-flexibility DC cable designed for energy storage and battery systems. Rated 1.5/3kV with 10,000+ bend cycle life.</div>
-          <div class="product-tags"><span class="product-tag">High Flex</span><span class="product-tag">Bend Resistant</span></div>
-          <div class="product-footer"><span class="product-link">Get Quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+          <div class="product-desc">Special high-flexibility DC cable designed for energy storage and battery systems. Rated 1.5/3kV with 10,000+ bend cycle life. Tinned copper conductor ensures reliable connections in ESS applications.</div>
+          <div class="product-tags">
+            <span class="product-tag">High Flexibility</span>
+            <span class="product-tag">Bend Resistant</span>
+            <span class="product-tag">TÜV</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
         </div>
       </div>
-      <!-- Product 5: MC4 Connector -->
+      <!-- Product 5 -->
       <div class="product-card" data-category="connector">
-        <div class="product-img"><img src="images/mc4.jpg" alt="MC4 Solar Connector - IP68 Waterproof"></div>
+        <div class="product-img"><img src="images/mc4.jpg" alt="MC4 Solar Connector - IP68 Waterproof TÜV"></div>
         <div class="product-body">
           <div class="product-name">MC4 Solar Connector</div>
           <div class="product-model">Size: 2.5/4 mm² · IP68</div>
-          <div class="product-desc">MC4-compatible solar connectors with IP68 waterproof sealing. Quick push-lock design. Rated 1000V DC / 30A.</div>
-          <div class="product-tags"><span class="product-tag">IP68</span><span class="product-tag">Quick Connect</span></div>
-          <div class="product-footer"><span class="product-link">Get Quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+          <div class="product-desc">MC4-compatible solar connectors with IP68 waterproof sealing. Quick push-lock design for tool-free installation. Rated 1000V DC / 30A, UV resistant polymer housing.</div>
+          <div class="product-tags">
+            <span class="product-tag">IP68</span>
+            <span class="product-tag">Quick Connect</span>
+            <span class="product-tag">TÜV</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
         </div>
       </div>
-      <!-- Product 6: MC4 Extension -->
+      <!-- Product 6 -->
       <div class="product-card" data-category="connector">
         <div class="product-img"><img src="images/mc4ext.jpg" alt="MC4 Adapter Extension Cable - IP68"></div>
         <div class="product-body">
           <div class="product-name">MC4 Adapters & Extensions</div>
           <div class="product-model">Lengths: Multiple options</div>
-          <div class="product-desc">MC4 series adapter connectors and pre-assembled extension cables. Male-male, female-female, male-female configurations.</div>
-          <div class="product-tags"><span class="product-tag">Plug & Play</span><span class="product-tag">IP68</span></div>
-          <div class="product-footer"><span class="product-link">Get Quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+          <div class="product-desc">MC4 series adapter connectors and pre-assembled extension cables. Available in male-male, female-female, and male-female configurations. Lengths from 100mm to 1000mm. IP68 rated.</div>
+          <div class="product-tags">
+            <span class="product-tag">Plug & Play</span>
+            <span class="product-tag">IP68</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
         </div>
       </div>
-      <!-- Product 7: Solar Panel -->
-      <div class="product-card" data-category="module">
-        <div class="product-img"><img src="images/module.jpg" alt="Solar Panel Module - Monocrystalline 400W-700W"></div>
-        <div class="product-badge">Hot</div>
-        <div class="product-body">
-          <div class="product-name">Solar Panel / Module</div>
-          <div class="product-model">Power: 400W~700W · Mono / Tier 1</div>
-          <div class="product-desc">High-efficiency monocrystalline solar panels. Available in 72-cell and 144-cell half-cut designs. 25-year linear power warranty.</div>
-          <div class="product-tags"><span class="product-tag">Tier 1</span><span class="product-tag">25yr Warranty</span></div>
-          <div class="product-footer"><span class="product-link">Get Quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+    </div>
+<!-- FEATURES + STATS + CERTS COMBINED -->
+<section class="section section-alt" id="features">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Why Choose Us</div>
+      <h2 class="section-title">Built for Performance, Backed by Trust</h2>
+      <p class="section-desc">Two decades of PV cable expertise, delivering quality and reliability to solar projects worldwide.</p>
+    </div>
+    <div class="features-stats-layout">
+      <div class="features-left">
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <div class="feature-title">Global Certifications</div>
+            <div class="feature-desc">TÜV, UL, CSA, CE — full certification coverage for European, North American, and Asia-Pacific market access requirements.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <div class="feature-title">25-Year Service Life</div>
+            <div class="feature-desc">XLPO cross-linked polyolefin insulation rated for over 25 years of service. Passed 2,000h accelerated aging tests with &lt;10% performance degradation.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/>
+              </svg>
+            </div>
+            <div class="feature-title">Extreme Environment Rated</div>
+            <div class="feature-desc">Operating temperature -40°C to +120°C. UV resistant, ozone resistant, moisture resistant — built for deserts, high altitudes, and coastal installations.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l2 3v6h-6V8z"/>
+              </svg>
+            </div>
+            <div class="feature-title">Custom Manufacturing</div>
+            <div class="feature-desc">Customizable colors, cross-sections, lengths, and packaging. Flexible MOQ with 7–15 day lead times for standard orders.</div>
+          </div>
         </div>
       </div>
-      <!-- Product 8: Grid-tied Inverter -->
-      <div class="product-card" data-category="inverter">
-        <div class="product-img"><img src="images/inverter.jpg" alt="Grid-tied Solar Inverter 3kW-100kW"></div>
-        <div class="product-body">
-          <div class="product-name">Grid-tied Inverter</div>
-          <div class="product-model">Power: 3kW~100kW · Single/Three Phase</div>
-          <div class="product-desc">Smart grid-tied solar inverters with efficiency up to 98.6%. Built-in WiFi monitoring, anti-islanding protection, IP65 rating.</div>
-          <div class="product-tags"><span class="product-tag">98.6% Eff.</span><span class="product-tag">WiFi Monitor</span></div>
-          <div class="product-footer"><span class="product-link">Get Quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+      <div class="features-right">
+        <div class="stats-inline">
+          <div class="stat-item">
+            <div class="stat-num">50<span class="stat-unit">+</span></div>
+            <div class="stat-label">Export Countries</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">200<span class="stat-unit">+</span></div>
+            <div class="stat-label">Global Clients</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">5,000<span class="stat-unit">km</span></div>
+            <div class="stat-label">Annual Capacity</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">99.8<span class="stat-unit">%</span></div>
+            <div class="stat-label">Pass Rate</div>
+          </div>
         </div>
-      </div>
-      <!-- Product 9: Microinverter -->
-      <div class="product-card" data-category="inverter">
-        <div class="product-img"><img src="images/microinverter.jpg" alt="Solar Microinverter 400W-800W per panel"></div>
-        <div class="product-body">
-          <div class="product-name">Microinverter</div>
-          <div class="product-model">Power: 400W~800W · Per-panel MPPT</div>
-          <div class="product-desc">Panel-level power optimization with individual MPPT. Maximizes energy yield in partial shading. Plug-and-play installation.</div>
-          <div class="product-tags"><span class="product-tag">Per-panel MPPT</span><span class="product-tag">Shading Tolerant</span></div>
-          <div class="product-footer"><span class="product-link">Get Quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
-        </div>
-      </div>
-      <!-- Product 10: Solar Mounting -->
-      <div class="product-card" data-category="mount">
-        <div class="product-img"><img src="images/rail.jpg" alt="Solar Mounting Rail System - Roof/Ground/Carport"></div>
-        <div class="product-body">
-          <div class="product-name">Solar Mounting System</div>
-          <div class="product-model">Material: Aluminum 6005-T5 · Roof/Ground/Carport</div>
-          <div class="product-desc">Complete solar mounting rail systems. Hot-dip galvanized steel brackets. Wind load rated up to 60m/s, snow load up to 2.4kN/m².</div>
-          <div class="product-tags"><span class="product-tag">Wind 60m/s</span><span class="product-tag">Galvanized</span></div>
-          <div class="product-footer"><span class="product-link">Get Quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
-        </div>
-      </div>
-      <!-- Product 11: Combiner Box -->
-      <div class="product-card" data-category="combiner">
-        <div class="product-img"><img src="images/combiner.jpg" alt="Solar Combiner Box - 4/6/8/12 Input DC"></div>
-        <div class="product-body">
-          <div class="product-name">Solar Combiner Box</div>
-          <div class="product-model">Inputs: 4/6/8/12 · IP65 · With SPD</div>
-          <div class="product-desc">DC combiner boxes with integrated surge protection devices (SPD) and string fuses. IP65 rated for outdoor installation.</div>
-          <div class="product-tags"><span class="product-tag">IP65</span><span class="product-tag">SPD Included</span></div>
-          <div class="product-footer"><span class="product-link">Get Quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
-        </div>
-      </div>
-      <!-- Product 12: Junction Box -->
-      <div class="product-card" data-category="junction">
-        <div class="product-img"><img src="images/junctionbox.jpg" alt="Solar Junction Box - IP68 Waterproof"></div>
-        <div class="product-body">
-          <div class="product-name">Solar Junction Box</div>
-          <div class="product-model">IP68 · By-pass Diode · Multiple Entries</div>
-          <div class="product-desc">Waterproof PV junction boxes with integrated bypass diodes. IP68 rated with multiple cable entry options.</div>
-          <div class="product-tags"><span class="product-tag">IP68</span><span class="product-tag">Bypass Diode</span></div>
-          <div class="product-footer"><span class="product-link">Get Quote <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span></div>
+        <div class="certs-dark">
+          <div class="certs-dark-label">Authoritatively Certified</div>
+          <div class="cert-row">
+            <div class="cert-item"><div class="cert-icon">TÜV</div><div class="cert-name">German TÜV</div></div>
+            <div class="cert-item"><div class="cert-icon">UL</div><div class="cert-name">US UL Listed</div></div>
+            <div class="cert-item"><div class="cert-icon">CE</div><div class="cert-name">EU CE Mark</div></div>
+            <div class="cert-item"><div class="cert-icon">ISO</div><div class="cert-name">ISO 9001</div></div>
+            <div class="cert-item"><div class="cert-icon">CSA</div><div class="cert-name">Canada CSA</div></div>
+            <div class="cert-item"><div class="cert-icon">IEC</div><div class="cert-name">IEC 62930</div></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</body>
+</section><!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-content">
+    <h2 class="cta-title">Ready to Power Your Solar Project?</h2>
+    <p class="cta-desc" style="margin-bottom:40px">Contact JunlinChicheng Metal Products Group Co., Ltd. technical team for product selection advice, competitive pricing, and free samples.</p>
+    <div class="cta-btns">
+      <a href="mailto:xxy13992859166@gmail.com" class="btn btn-primary" style="font-size:15px;padding:12px 28px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email Us
+      </a>
+      <a href="https://wa.me/8615339005193?text=Hi%20JunlinChicheng%20team%2C%20I%27m%20sourcing%20solar%20cables.%20Please%20send%20catalog%20and%20pricing." class="btn btn-white" style="font-size:15px;padding:12px 28px;" target="_blank" rel="noopener">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Us
+      </a>
+    </div>
+    <!-- INQUIRY FORM -->
+    <div class="inquiry-form">
+      <h3>Or Send Us an Inquiry Directly</h3>
+      <form action="https://formsubmit.co/xxy13992859166@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="New Inquiry from Suncable Website!">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://xxy13992859166-ops.github.io/suncable-website/thankyou.html">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name *</label>
+            <input type="text" name="Name" placeholder="John Smith" required>
+          </div>
+          <div class="form-group">
+            <label>Company</label>
+            <input type="text" name="Company" placeholder="Company name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" name="Email" placeholder="you@company.com" required>
+          </div>
+          <div class="form-group">
+            <label>WhatsApp / Phone</label>
+            <input type="tel" name="Phone" placeholder="+1 234 567 8900">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Country / Region</label>
+          <select name="Country">
+            <option value="">Select your country...</option>
+            <option>United Arab Emirates</option>
+            <option>Saudi Arabia</option>
+            <option>South Africa</option>
+            <option>Nigeria</option>
+            <option>India</option>
+            <option>Vietnam</option>
+            <option>Kenya</option>
+            <option>Egypt</option>
+            <option>Australia</option>
+            <option>Philippines</option>
+            <option>Malaysia</option>
+            <option>Indonesia</option>
+            <option>Mexico</option>
+            <option>Brazil</option>
+            <option>Germany</option>
+            <option>United Kingdom</option>
+            <option>United States</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Product Interest</label>
+          <select name="Product">
+            <option value="">Select product...</option>
+            <option>PV1-F Solar DC Cable (Red/Black)</option>
+            <option>H1ZZ2-K Solar Cable (Black)</option>
+            <option>MC4 Connector</option>
+            <option>MC4 Extension Cable</option>
+            <option>Energy Storage Cable</option>
+            <option>AC Distribution Cable</option>
+            <option>Solar Panel / Module</option>
+            <option>Inverter</option>
+            <option>Solar Mounting System</option>
+            <option>Multiple Products</option>
+            <option>Custom Solution</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message / Requirements</label>
+          <textarea name="Message" placeholder="Tell us about your project, required quantities, specifications..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Submit Inquiry &rarr;</button>
+        <div class="form-note">We reply within 2 hours during working days. Your info is 100% confidential.</div>
+      </form>
+    </div>
+    <div style="margin-top:48px;display:flex;justify-content:center;gap:48px;flex-wrap:wrap;color:rgba(255,255,255,0.5);font-size:14px;">
+      <span>Phone: +86 153 3900 5193</span>
+      <span>Email: xxy13992859166@gmail.com</span>
+      <span>Address: Fortune Building, Sanqiao Sub-district, Fengdong New City, Xi&#8217;an City, Shaanxi Province, P.R.China</span>
+    </div>
+  </div>
+</section>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">
+        <img src="images/logo.jpg" alt="Logo">
+        <span class="logo-text">JunlinChicheng Metal Products Group</span>
+      </div>
+      <p>20+ years of PV DC cable R&D and manufacturing, providing safe and reliable electrical connection solutions for renewable energy projects worldwide.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Products</div>
+      <ul class="footer-links">
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#products">PV1-F Solar Cable</a></li>
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#products">H1ZZ2-K Solar Cable</a></li>
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#products">Energy Storage DC Cable</a></li>
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#products">MC4 Connectors</a></li>
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#products">AC Distribution Cable</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#features">About Us</a></li>
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#features">Factory Tour</a></li>
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/#features">Quality Control</a></li>
+        <li><a href="#">Case Studies</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Support</div>
+      <ul class="footer-links">
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/blog-pv-cable-selection-guide.html">Product Selection</a></li>
+        <li><a href="#">Download Center</a></li>
+        <li><a href="https://xxy13992859166-ops.github.io/suncable-website/faq.html">FAQ</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 JunlinChicheng Metal Products Group Co., Ltd. All rights reserved</span>
+    <span>Privacy Policy · Terms of Service</span>
+  </div>
+</footer>
+<!-- WHATSAPP FLOAT BUTTON -->
+<div class="wa-float">
+  <div class="wa-tooltip">💬 Chat with us on WhatsApp</div>
+  <a class="wa-btn" href="https://wa.me/8615339005193?text=Hi%20JunlinChicheng Metal Products Group Co., Ltd.%20team%2C%20I%27m%20sourcing%20solar%20DC%20cables%20for%20a%20project%20in%20%5BCountry%5D.%20Can%20you%20send%20me%20a%20quote%20for%20PV1-F%204mm%C2%B2%20%2F%20H1ZZ2-K%206mm%C2%B2%20cables%3F%20Please%20share%20your%20catalog%20and%20MOQ%20details.%20Thanks!" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+</div>
+<script>
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 10);
+});
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+  const spans = hamburger.querySelectorAll('span');
+  if (mobileMenu.classList.contains('open')) {
+    spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
+    spans[1].style.opacity = '0';
+    spans[2].style.transform = 'rotate(-45deg) translate(5px,-5px)';
+  } else {
+    spans[0].style.transform = '';
+    spans[1].style.opacity = '';
+    spans[2].style.transform = '';
+  }
+});
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    const spans = hamburger.querySelectorAll('span');
+    spans[0].style.transform = '';
+    spans[1].style.opacity = '';
+    spans[2].style.transform = '';
+  });
+});
+function filterProducts(category, btn) {
+  document.querySelectorAll('.product-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.product-card').forEach(card => {
+    const show = category === 'all' || card.dataset.category === category;
+    card.style.display = show ? '' : 'none';
+  });
+}
+const statEls = document.querySelectorAll('.stat-num');
+let statsAnimated = false;
+const statsObserver = new IntersectionObserver(entries => {
+  if (entries[0].isIntersecting && !statsAnimated) {
+    statsAnimated = true;
+    statEls.forEach(el => {
+      const target = el.textContent;
+      const numMatch = target.match(/[\d.]+/);
+      if (numMatch) {
+        const targetNum = parseFloat(numMatch[0]);
+        const suffix = target.replace(numMatch[0], '');
+        let current = 0;
+        const step = targetNum / 40;
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= targetNum) { current = targetNum; clearInterval(timer); }
+          el.innerHTML = (Number.isInteger(targetNum) ? Math.round(current) : current.toFixed(1)) + suffix.replace(/[\d.]/g, '');
+        }, 30);
+      }
+    });
+  }
+}, { threshold: 0.3 });
+
+</script>
+
+<!-- THANK YOU OVERLAY (shown after form submission) -->
+<div id="thankyou-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:9999;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:16px;padding:48px;max-width:480px;width:90%;text-align:center;margin:20px;">
+    <div style="font-size:64px;margin-bottom:16px;">&#10003;</div>
+    <h2 style="color:#1a5276;margin-bottom:12px;font-size:24px;">Inquiry Sent Successfully!</h2>
+    <p style="color:#666;line-height:1.8;margin-bottom:24px;">Thank you for your interest in our PV solar cables.<br>Our sales team will contact you within 2 hours during working days.</p>
+    <div style="background:#f0f7ff;border-radius:8px;padding:16px;margin-bottom:24px;text-align:left;">
+      <p style="margin:6px 0;color:#333;font-size:14px;"><strong>&#128231; Email:</strong> xxy13992859166@gmail.com</p>
+      <p style="margin:6px 0;color:#333;font-size:14px;"><strong>&#128172; WhatsApp:</strong> +86 153 3900 5193</p>
+      <p style="margin:6px 0;color:#333;font-size:14px;"><strong>&#127970; Address:</strong> Fortune Building, Sanqiao Sub-district, Fengdong New City, Xi&#8217;an City, Shaanxi Province, P.R.China</p>
+    </div>
+    <button onclick="document.getElementById('thankyou-overlay').style.display='none'" style="background:linear-gradient(135deg,#e67e22,#d35400);color:#fff;border:none;padding:14px 40px;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;">Back to Website</button>
+  </div>
+</div></body>
 </html>
