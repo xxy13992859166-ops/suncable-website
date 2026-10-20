@@ -651,13 +651,14 @@
     <div class="section-header">
       <div class="section-tag">Products</div>
       <h2 class="section-title">Complete PV Cable Solutions</h2>
-      <p class="section-desc">From module-to-inverter DC connections to AC distribution — a full product lineup for every solar project requirement.</p>
+      <p class="section-desc">Complete range of PV cables, connectors, and solar components — from DC cables to modules, inverters, and mounting systems.</p>
     </div>
     <div class="product-tabs">
       <button class="product-tab active" onclick="filterProducts('all', this)">All Products</button>
       <button class="product-tab" onclick="filterProducts('dc', this)">DC Cables</button>
       <button class="product-tab" onclick="filterProducts('ac', this)">AC Cables</button>
       <button class="product-tab" onclick="filterProducts('connector', this)">Connectors</button>
+      <button class="product-tab" onclick="filterProducts('solar', this)">Solar Products</button>
     <div class="products-grid" id="productsGrid">
       <!-- Product 1 -->
       <div class="product-card" data-category="dc">
@@ -761,7 +762,110 @@
             <span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </div>
         </div>
+      </di
+      <!-- Solar Product 1 -->
+      <div class="product-card" data-category="solar">
+        <div class="product-img"><img src="images/module.jpg" alt="Solar Panel PV Module - Monocrystalline Bifacial 580W TUV Certified"></div>
+        <div class="product-badge">Hot</div>
+        <div class="product-body">
+          <div class="product-name">Solar Panel PV Module</div>
+          <div class="product-model">Power: 450~670W · N-type Bifacial</div>
+          <div class="product-desc">High-efficiency monocrystalline bifacial PV modules with anti-PID technology. Available in half-cell and full-cell designs. TÜV and UL certified for commercial and utility-scale solar projects.</div>
+          <div class="product-tags">
+            <span class="product-tag">TÜV</span>
+            <span class="product-tag">UL</span>
+            <span class="product-tag">Bifacial</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </div>
       </div>
+      <!-- Solar Product 2 -->
+      <div class="product-card" data-category="solar">
+        <div class="product-img"><img src="images/inverter.jpg" alt="Grid-tie Solar Inverter - String Inverter 5~50kW CE Certified"></div>
+        <div class="product-body">
+          <div class="product-name">Grid-tie Solar Inverter</div>
+          <div class="product-model">Power: 5~50kW · IP66</div>
+          <div class="product-desc">Three-phase string inverters with dual MPPT trackers and built-in WiFi monitoring. High efficiency up to 98.6%. CE/TÜV certified for residential, commercial, and utility-scale solar installations.</div>
+          <div class="product-tags">
+            <span class="product-tag">CE</span>
+            <span class="product-tag">TÜV</span>
+            <span class="product-tag">WiFi Monitor</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <!-- Solar Product 3 -->
+      <div class="product-card" data-category="solar">
+        <div class="product-img"><img src="images/microinverter.jpg" alt="Microinverter for Solar Panel - 400W MPPT IP67"></div>
+        <div class="product-body">
+          <div class="product-name">Solar Microinverter</div>
+          <div class="product-model">Power: 300~500W · MPPT · IP67</div>
+          <div class="product-desc">Panel-level MPPT microinverters for residential rooftop solar systems. Each panel operates independently for maximum energy harvest. Smart monitoring per panel via mobile app. UL 1741 SB certified.</div>
+          <div class="product-tags">
+            <span class="product-tag">UL</span>
+            <span class="product-tag">MPPT</span>
+            <span class="product-tag">Smart Monitor</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <!-- Solar Product 4 -->
+      <div class="product-card" data-category="solar">
+        <div class="product-img"><img src="images/rail.jpg" alt="Solar Panel Mounting Rail System - Aluminum Alloy SS400"></div>
+        <div class="product-body">
+          <div class="product-name">Solar Mounting Rail System</div>
+          <div class="product-model">Material: Aluminum 6005-T5 / SS400</div>
+          <div class="product-desc">Heavy-duty aluminum alloy mounting rails for ground, roof, and carport solar installations. Compatible with all major PV module brands. Wind load rated up to 60m/s, snow load up to 3kN/m².</div>
+          <div class="product-tags">
+            <span class="product-tag">Wind 60m/s</span>
+            <span class="product-tag">Snow 3kN/m²</span>
+            <span class="product-tag">Easy Install</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <!-- Solar Product 5 -->
+      <div class="product-card" data-category="solar">
+        <div class="product-img"><img src="images/combiner.jpg" alt="Solar Combiner Box - 12 Input 1 Output IP65"></div>
+        <div class="product-body">
+          <div class="product-name">Solar Combiner Box</div>
+          <div class="product-model">Inputs: 6/8/12/16 · IP65</div>
+          <div class="product-desc">PV combiner boxes with surge protection devices (SPD) and DC disconnect switches. Multiple input configurations available. Rated for outdoor installation with IP65 protection.</div>
+          <div class="product-tags">
+            <span class="product-tag">SPD</span>
+            <span class="product-tag">IP65</span>
+            <span class="product-tag">DC Breaker</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </div>
+      </div>
+      <!-- Solar Product 6 -->
+      <div class="product-card" data-category="solar">
+        <div class="product-img"><img src="images/junctionbox.jpg" alt="Solar Junction Box - IP68 Waterproof PV Connection"></div>
+        <div class="product-body">
+          <div class="product-name">Solar Junction Box</div>
+          <div class="product-model">IP68 · Bypass Diode Included</div>
+          <div class="product-desc">Waterproof PV junction boxes for solar panel string connections. Built-in bypass diodes protect against hot spot damage. IP68 rated for harsh outdoor environments.</div>
+          <div class="product-tags">
+            <span class="product-tag">IP68</span>
+            <span class="product-tag">Bypass Diode</span>
+            <span class="product-tag">UV Resistant</span>
+          </div>
+          <div class="product-footer">
+            <span class="product-link">Learn More <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </div>
+        </div>
+      </div>v>
     </div>
 <!-- FEATURES + STATS + CERTS COMBINED -->
 <section class="section section-alt" id="features">
