@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>WhatsApp Auto Outreach - JunlinChicheng Solar Cable</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#0f172a;color:#e2e8f0;padding:20px}
+.container{max-width:900px;margin:0 auto}
+h1{color:#25d366;margin-bottom:8px;font-size:24px}
+.subtitle{color:#94a3b8;margin-bottom:24px;font-size:14px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+.stat{background:#1e293b;border-radius:12px;padding:16px;text-align:center;border:1px solid #334155}
+.stat-num{font-size:28px;font-weight:800;color:#25d366}
+.stat-label{font-size:12px;color:#94a3b8;margin-top:4px}
+.card{background:#1e293b;border-radius:12px;padding:20px;border:1px solid #334155;margin-bottom:16px}
+.card h3{font-size:16px;font-weight:700;margin-bottom:12px;color:#f8fafc}
+.progress-bar{height:8px;background:#334155;border-radius:4px;overflow:hidden;margin:8px 0}
+.progress-fill{height:100%;background:linear-gradient(90deg,#25d366,#128c7e);border-radius:4px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:700;font-size:14px;border:none;cursor:pointer;margin:4px}
+.btn-green{background:#25d366;color:#000}
+.btn-blue{background:#1a5276;color:#fff}
+.btn-red{background:#dc2626;color:#fff}
+.target-list{max-height:400px;overflow-y:auto}
+.target-item{display:flex;align-items:center;gap:12px;padding:12px;background:#0f172a;border-radius:8px;margin-bottom:8px;border:1px solid #334155;cursor:pointer}
+.target-item:hover{border-color:#25d366}
+.target-item.done{opacity:.5}
+.target-info{flex:1}
+.target-name{font-weight:600;font-size:14px}
+.target-detail{font-size:12px;color:#94a3b8;margin-top:2px}
+.target-status{font-size:12px;padding:4px 10px;border-radius:20px;font-weight:600}
+.status-pending{background:#334155;color:#94a3b8}
+.status-sent{background:#065f46;color:#34d399}
+.status-open{background:#1e3a5f;color:#60a5fa}
+.wa-input{width:100%;padding:12px;background:#0f172a;border:1px solid #334155;border-radius:8px;color:#e2e8f0;font-size:14px;margin-bottom:12px;font-family:inherit}
+.wa-input:focus{outline:none;border-color:#25d366}
+.log{background:#0f172a;border-radius:8px;padding:16px;font-family:monospace;font-size:12px;color:#94a3b8;max-height:200px;overflow-y:auto;margin-top:16px}
+.log-entry{margin-bottom:4px}
+.log-ok{color:#34d399}.log-err{color:#f87171}.log-warn{color:#fbbf24}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>WhatsApp Auto Outreach</h1>
+<p class="subtitle">JunlinChicheng Solar Cable - B2B Lead Generation Tool</p>
+<div class="stats">
+<div class="stat"><div class="stat-num" id="totalCount">0</div><div class="stat-label">Total Targets</div></div>
+<div class="stat"><div class="stat-num" id="sentCount">0</div><div class="stat-label">Sent</div></div>
+<div class="stat"><div class="stat-num" id="openCount">0</div><div class="stat-label">Opened</div></div>
+<div class="stat"><div class="stat-num" id="pendingCount">0</div><div class="stat-label">Pending</div></div>
+</div>
+<div class="card">
+<h3>Target Markets</h3>
+<div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px">
+<span class="target-status status-pending">South Africa</span>
+<span class="target-status status-pending">Nigeria</span>
+<span class="target-status status-pending">Kenya</span>
+<span class="target-status status-pending">Saudi Arabia</span>
+<span class="target-status status-pending">UAE</span>
+<span class="target-status status-pending">India</span>
+</div>
+<div class="progress-bar"><div class="progress-fill" id="progressBar" style="width:0%"></div></div>
+<p style="font-size:13px;color:#94a3b8">Daily goal: 30-50 prospects | Target: inquiries by November</p>
+</div>
+<div class="card">
+<h3>Message Template</h3>
+<textarea class="wa-input" id="template" rows="5"></textarea>
+<button class="btn btn-green" onclick="saveTemplate()">Save Template</button>
+</div>
+<div class="card">
+<h3>Target Company List (click any row to search)</h3>
+<div class="target-list" id="targetList"></div>
+</div>
+<div class="card">
+<h3>Controls</h3>
+<button class="btn btn-green" id="startBtn" onclick="startOutreach()">Start Auto Open</button>
+<button class="btn btn-blue" onclick="exportContacts()">Export Contacts</button>
+<button class="btn btn-red" onclick="clearAll()">Clear All</button>
+<div class="log" id="log"><div class="log-entry log-ok">Ready to start outreach.</div></div>
+</div>
+</div>
+<script>
+var targets=[
+  {
+    "name": "Strandline Solar",
+    "country": "South Africa",
+    "search": "Strandline Solar South Africa contact phone WhatsApp procurement",
+    "priority": "HIGH"
+  },
+  {
+    "name": "Red Energy South Africa",
+    "country": "South Africa",
+    "search": "Red Energy South Africa contact phone WhatsApp procurement solar",
+    "priority": "HIGH"
+  },
+  {
+    "name": "Sunsource Solar",
+    "country": "South Africa",
+    "search": "Sunsource Solar South Africa contact phone procurement manager",
+    "priority": "HIGH"
+  },
+  {
+    "name": "Transsolar Engineering",
+    "country": "Nigeria",
+    "search": "Transsolar Engineering Nigeria Lagos contact phone WhatsApp procurement",
+    "priority": "HIGH"
+  },
+  {
+    "name": "LightUp Solar",
+    "country": "Nigeria",
+    "search": "LightUp Solar Nigeria contact phone WhatsApp procurement manager",
+    "priority": "HIGH"
+  },
+  {
+    "name": "ACWA Power",
+    "country": "Saudi Arabia",
+    "search": "ACWA Power Saudi Arabia Riyadh procurement contact phone solar cables",
+    "priority": "HIGH"
+  },
+  {
+    "name": "Falcon Energetics",
+    "country": "UAE",
+    "search": "Falcon Energetics UAE Dubai contact phone procurement solar",
+    "priority": "HIGH"
+  },
+  {
+    "name": "M-KOPA Solar",
+    "country": "Kenya",
+    "search": "M-KOPA Solar Kenya Nairobi contact phone WhatsApp procurement",
+    "priority": "HIGH"
+  },
+  {
+    "name": "Tata Power Renewable Energy",
+    "country": "India",
+    "search": "Tata Power Renewable Energy India procurement vendor registration solar cables contact",
+    "priority": "HIGH"
+  },
+  {
+    "name": "Waaree Energies",
+    "country": "India",
+    "search": "Waaree Energies India procurement contact phone solar cables",
+    "priority": "HIGH"
+  },
+  {
+    "name": "Arnergy",
+    "country": "Nigeria",
+    "search": "Arnergy Nigeria Lagos contact phone WhatsApp solar",
+    "priority": "MEDIUM"
+  },
+  {
+    "name": "Elm Company",
+    "country": "Saudi Arabia",
+    "search": "Elm Company Saudi Arabia contact phone procurement solar",
+    "priority": "MEDIUM"
+  },
+  {
+    "name": "Karoon Energy",
+    "country": "UAE",
+    "search": "Karoon Energy UAE procurement contact phone solar cables",
+    "priority": "MEDIUM"
+  },
+  {
+    "name": "Engie UAE",
+    "country": "UAE",
+    "search": "Engie UAE solar procurement contact phone",
+    "priority": "MEDIUM"
+  },
+  {
+    "name": "OkoaSolar",
+    "country": "Kenya",
+    "search": "OkoaSolar Kenya contact phone WhatsApp procurement",
+    "priority": "MEDIUM"
+  },
+  {
+    "name": "ReNew Power",
+    "country": "India",
+    "search": "ReNew Power India procurement solar cables contact vendor registration",
+    "priority": "HIGH"
+  },
+  {
+    "name": "Sika South Africa",
+    "country": "South Africa",
+    "search": "Sika South Africa solar procurement contact phone",
+    "priority": "MEDIUM"
+  },
+  {
+    "name": "Maxtron Energy",
+    "country": "Nigeria",
+    "search": "Maxtron Energy Nigeria contact phone procurement solar",
+    "priority": "MEDIUM"
+  },
+  {
+    "name": "Ampenergy",
+    "country": "South Africa",
+    "search": "Ampenergy South Africa solar procurement contact",
+    "priority": "MEDIUM"
+  },
+  {
+    "name": "Greenko Group",
+    "country": "India",
+    "search": "Greenko Group India solar procurement contact",
+    "priority": "MEDIUM"
+  }
+];
+targets.forEach(function(t){t.status="pending";t.phone="";});
+function renderTargets(){
+  var sent=targets.filter(function(t){return t.status==="sent"}).length;
+  var open=targets.filter(function(t){return t.status==="open"}).length;
+  var pending=targets.filter(function(t){return t.status==="pending"}).length;
+  document.getElementById("totalCount").textContent=targets.length;
+  document.getElementById("sentCount").textContent=sent;
+  document.getElementById("openCount").textContent=open;
+  document.getElementById("pendingCount").textContent=pending;
+  var pct=Math.round(sent/targets.length*100);
+  document.getElementById("progressBar").style.width=pct+"%";
+  var list="";
+  targets.forEach(function(t,i){
+    var cls=t.status==="sent"?"done":"";
+    var stCls=t.status==="sent"?"status-sent":t.status==="open"?"status-open":"status-pending";
+    var stTxt=t.status.charAt(0).toUpperCase()+t.status.slice(1);
+    list+='<div class="target-item '+cls+'" onclick="openSearch('+i+')" title="Click to search for '+t.name+'">';
+    list+='<div style="width:24px;height:24px;border-radius:50%;background:'+(t.priority==="HIGH"?"#ef4444":"#f59e0b")+';display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff">'+t.priority.charAt(0)+'</div>';
+    list+='<div class="target-info"><div class="target-name">'+t.name+'</div>';
+    list+='<div class="target-detail">'+t.country+' | Priority: '+t.priority+'</div>';
+    list+='<div class="target-detail" style="color:#60a5fa">'+t.search+'</div>';
+    if(t.phone)list+='<div class="target-detail" style="color:#34d399">Phone: '+t.phone+'</div>';
+    list+='</div><span class="target-status '+stCls+'">'+stTxt+'</span></div>';
+  });
+  document.getElementById("targetList").innerHTML=list;
+}
+function openSearch(i){
+  var t=targets[i];
+  var url="https://www.google.com/search?q="+encodeURIComponent(t.search);
+  window.open(url,"_blank");
+  t.status="open";
+  renderTargets();
+  addLog("Opened: "+t.name+" ("+t.country+")","ok");
+}
+function saveTemplate(){
+  localStorage.setItem("wa_template",document.getElementById("template").value);
+  addLog("Template saved!","ok");
+}
+function startOutreach(){
+  addLog("Opening searches for all "+targets.length+" targets...","ok");
+  var pending=targets.filter(function(t){return t.status==="pending"});
+  pending.forEach(function(t,i){
+    setTimeout(function(){openSearch(targets.indexOf(t))},i*600);
+  });
+}
+function exportContacts(){
+  var csv="Name,Country,Priority,Search,WhatsApp,Email\n";
+  targets.forEach(function(t){csv+=t.name+","+t.country+","+t.priority+",\""+t.search.replace(/"/g,'""')+"\",\""+t.phone+"",""\n});
+  var blob=new Blob([csv],{type:"text/csv"});var url=URL.createObjectURL(blob);
+  var a=document.createElement("a");a.href=url;a.download="whatsapp_targets.csv";a.click();
+  addLog("Exported "+targets.length+" contacts","ok");
+}
+function clearAll(){
+  targets.forEach(function(t){t.status="pending";t.phone="";});
+  renderTargets();
+  addLog("All cleared","warn");
+}
+function addLog(msg,type){
+  var log=document.getElementById("log");
+  var cls=type==="ok"?"log-ok":type==="err"?"log-err":"log-warn";
+  log.innerHTML+='<div class="log-entry '+cls+'">['+new Date().toLocaleTimeString()+'] '+msg+"</div>";
+  log.scrollTop=log.scrollHeight;
+}
+window.onload=function(){
+  var t=localStorage.getItem("wa_template");
+  if(t)document.getElementById("template").value=t;
+  else document.getElementById("template").value="Hello! This is from JunlinChicheng Metal Products Group Co., Ltd. We are a TUV and UL certified manufacturer of solar PV cables (PV1-F, H1Z2Z2-K), MC4 connectors, and complete solar energy system components. We export to 50+ countries with competitive factory pricing. May I send you our catalog and quotation? Our WhatsApp: +86 153 3900 5193";
+  renderTargets();
+  addLog("Tool loaded. "+targets.length+" targets ready.","ok");
+};
+</script>
+</body>
+</html>
