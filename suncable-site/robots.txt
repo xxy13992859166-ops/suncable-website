@@ -1,3 +1,1 @@
-User-agent: *
-Allow: /
-Sitemap: https://xxy13992859166-ops.github.io/suncable-website/sitemap.xml
+User-agent: *\nAllow: /\n\nSitemap: https://xxy13992859166-ops.github.io/suncable-website/sitemap.xml
