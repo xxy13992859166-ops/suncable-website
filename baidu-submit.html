@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Baidu Webmaster Tools Submit</title>
+<meta name="robots" content="noindex, follow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1e293b;background:#f8fafc}
+.nav{background:#fff;border-bottom:1px solid #e2e8f0;padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.nav a{color:#1a5276;font-size:14px;font-weight:500;margin-right:20px;text-decoration:none}
+.container{max-width:900px;margin:0 auto;padding:40px 20px}
+h1{font-size:28px;font-weight:800;color:#0d1b2a;margin-bottom:8px}
+.lead{color:#64748b;font-size:16px;margin-bottom:32px}
+.card{background:#fff;border-radius:12px;border:1px solid #e2e8f0;padding:24px;margin-bottom:20px}
+.card h2{font-size:18px;font-weight:700;margin-bottom:12px;color:#0d1b2a}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none}
+.btn-primary{background:#c00;color:#fff}
+.btn-primary:hover{background:#a00}
+.steps{margin-left:20px;line-height:2.2;color:#475569}
+code{background:#f1f5f9;padding:2px 6px;border-radius:4px;font-size:13px}
+pre{background:#1e293b;color:#60a5fa;padding:12px;border-radius:8px;margin:12px 0;font-size:13px;overflow-x:auto}
+.note{background:#fef3c7;border:1px solid #fcd34d;border-radius:8px;padding:16px;font-size:14px;color:#92400e;margin-top:16px}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="/" style="font-weight:700;color:#0d1b2a">JunlinChicheng</a>
+  <div><a href="/">Home</a><a href="/faq.html">FAQ</a><a href="/#contact">Contact</a></div>
+</div>
+<div class="container">
+  <h1>Baidu Webmaster Tools</h1>
+  <p class="lead">Submit your site to Baidu for Chinese-language organic traffic and APAC coverage.</p>
+
+  <div class="card">
+    <h2>Step 1: Register at Baidu Zhanzhang</h2>
+    <ol class="steps">
+      <li>Go to <a href="https://ziyuan.baidu.com/" target="_blank" rel="noopener">ziyuan.baidu.com</a> (Baidu Webmaster Platform)</li>
+      <li>Sign in with Baidu account (need Chinese phone number) or use third-party login</li>
+      <li>Click "网站添加" (Add Site) and enter: <code>https://xxy13992859166-ops.github.io/suncable-website/</code></li>
+    </ol>
+    <div style="margin-top:20px">
+      <a href="https://ziyuan.baidu.com/linksubmit/index" class="btn btn-primary" target="_blank" rel="noopener">Submit to Baidu</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Step 2: Verify Ownership</h2>
+    <ol class="steps">
+      <li>Baidu offers multiple verification methods:</li>
+      <li><strong>HTML tag:</strong> Add meta tag to your HTML head</li>
+      <li><strong>DNS TXT:</strong> Add TXT record to your domain DNS (most reliable)</li>
+      <li><strong>File upload:</strong> Upload verification file to site root</li>
+      <li>For GitHub Pages, use DNS TXT verification</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Step 3: Submit Sitemap</h2>
+    <ol class="steps">
+      <li>After verification, go to "站点管理" > "Sitemap"</li>
+      <li>Add your sitemap: <code style="display:block;margin:8px 0;word-break:break-all">https://xxy13992859166-ops.github.io/suncable-website/sitemap.xml</code></li>
+      <li>Baidu also accepts the API push method for real-time submission</li>
+    </ol>
+    <div style="margin-top:20px">
+      <a href="https://ziyuan.baidu.com/sitemap/index" class="btn btn-primary" target="_blank" rel="noopener">Submit Sitemap to Baidu</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Step 4: Use Baidu Push API</h2>
+    <p>Baidu provides an API for real-time URL submission (better than sitemap alone):</p>
+    <pre>curl -H "Content-Type:text/plain"   "http://data.zz.baidu.com/urls?site=xxy13992859166-ops.github.io&token=TOKEN"   --data-binary @urls.txt</pre>
+    <p>Replace TOKEN with your Baidu Zhanzhang API token. Create urls.txt with one URL per line.</p>
+  </div>
+
+  <div class="note">
+    <strong>Baidu SEO Tips:</strong> Baidu prioritizes Chinese-language content and sites hosted in Asia-Pacific. Consider adding a Chinese version of your site. Baidu also values internal linking and site structure heavily. Baidu crawls slower than Google for non-Chinese sites, so be patient (2-4 weeks for initial indexing).
+  </div>
+</div>
+</body>
+</html>
