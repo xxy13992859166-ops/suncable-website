@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Google Search Console 和 Bing Webmaster 手动操作指南</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; padding: 24px; line-height: 1.7; }
+  .container { max-width: 900px; margin: 0 auto; }
+  h1 { color: #1a5276; margin-bottom: 24px; font-size: 28px; }
+  h2 { color: #1a5276; margin: 32px 0 16px; font-size: 20px; border-left: 4px solid #1a5276; padding-left: 12px; }
+  h3 { color: #2c3e50; margin: 20px 0 10px; font-size: 16px; }
+  .card { background: white; border-radius: 12px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .step { display: flex; gap: 16px; margin-bottom: 16px; align-items: flex-start; }
+  .step-num { background: #1a5276; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; }
+  .step-content { flex: 1; }
+  .step-content p { color: #444; }
+  .highlight { background: #e8f4fd; border: 1px solid #b3d9f7; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .highlight strong { color: #1a5276; }
+  .code { background: #f4f4f4; padding: 2px 8px; border-radius: 4px; font-family: monospace; font-size: 14px; color: #c7254e; }
+  .success { background: #e8f5e9; border-color: #a5d6a7; }
+  .warning { background: #fff3e0; border-color: #ffcc80; }
+  a.btn { display: inline-block; background: #1a5276; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; margin: 8px 8px 8px 0; }
+  a.btn:hover { background: #2980b9; }
+  a.btn.outline { background: transparent; color: #1a5276; border: 2px solid #1a5276; }
+  a.btn.outline:hover { background: #1a5276; color: white; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+  th, td { border: 1px solid #ddd; padding: 10px 14px; text-align: left; font-size: 14px; }
+  th { background: #1a5276; color: white; }
+  tr:nth-child(even) { background: #f9f9f9; }
+  .verification-code { background: #1a1a2e; color: #00ff88; padding: 20px; border-radius: 8px; font-family: monospace; font-size: 18px; text-align: center; letter-spacing: 2px; margin: 16px 0; }
+  .progress { display: flex; gap: 8px; margin: 20px 0; }
+  .progress-step { flex: 1; height: 4px; border-radius: 2px; background: #ddd; }
+  .progress-step.done { background: #4caf50; }
+  .progress-step.current { background: #1a5276; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>🔍 Google Search Console & Bing Webmaster 手动操作指南</h1>
+  
+  <div class="progress">
+    <div class="progress-step done" title="站点已验证"></div>
+    <div class="progress-step current" title="Sitemap重新提交"></div>
+    <div class="progress-step" title="Bing添加站点"></div>
+    <div class="progress-step" title="完成"></div>
+  </div>
+
+  <!-- Google Search Console Section -->
+  <h2>任务一：Google Search Console — 重新提交 Sitemap</h2>
+  
+  <div class="card">
+    <div class="highlight">
+      <strong>当前状态：</strong>Sitemap 显示 "无法抓取"（最后抓取：2026年10月26日）。需要点击"重新提交"触发Google重新抓取。
+    </div>
+    
+    <h3>操作步骤：</h3>
+    
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <p>打开 Google Search Console：<a href="https://search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fxxy13992859166-ops.github.io%2Fsuncable-website%2F" target="_blank" class="btn">点击打开站点地图页面</a></p>
+      </div>
+    </div>
+    
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <p>在"已提交的站点地图"表格中，找到 <span class="code">/sitemap.xml</span> 这一行</p>
+      </div>
+    </div>
+    
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <p>点击表格最右侧的 <strong>⋮</strong>（三个点）操作按钮，弹出菜单</p>
+      </div>
+    </div>
+    
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <p>在弹出菜单中点击 <strong>「重新提交」</strong>（Resubmit）</p>
+      </div>
+    </div>
+    
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <p>确认弹窗中点击 <strong>「确定」</strong>，Google 将在数小时到几天内重新抓取</p>
+      </div>
+    </div>
+    
+    <div class="highlight success">
+      <strong>✅ 完成后：</strong>状态会从"无法抓取"变为"已读取"（Read），表示Google成功抓取了sitemap。
+    </div>
+  </div>
+
+  <!-- 验证状态检查 -->
+  <h2>验证检查清单</h2>
+  <div class="card">
+    <table>
+      <tr><th>检查项</th><th>状态</th><th>说明</th></tr>
+      <tr><td>Google 站点验证</td><td>✅ 已完成</td><td>google17308f79e30f35f7.html 已部署</td></tr>
+      <tr><td>Bing 站点验证</td><td>⏳ 待操作</td><td>msvalidate0123456789abcdef.html 已部署，需在Bing验证</td></tr>
+      <tr><td>Sitemap 可访问</td><td>✅ 正常</td><td>sitemap.xml 返回 200 OK，158个URL</td></tr>
+      <tr><td>robots.txt</td><td>✅ 正常</td><td>正确指向sitemap</td></tr>
+      <tr><td>GSC Sitemap 状态</td><td>⚠️ 需手动</td><td>显示"无法抓取"，需点击重新提交</td></tr>
+    </table>
+  </div>
+
+  <!-- Bing Webmaster Tools -->
+  <h2>任务二：Bing Webmaster Tools — 添加并提交</h2>
+  
+  <div class="card">
+    <div class="highlight warning">
+      <strong>注意：</strong>Bing 目前未验证此网站。需要先添加站点并验证所有权。
+    </div>
+    
+    <h3>步骤一：添加站点</h3>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <p>打开 <a href="https://www.bing.com/webmasters" target="_blank" class="btn">Bing Webmaster Tools</a></p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <p>点击右上角 <strong>「添加站点」</strong>（Add Site）</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <p>输入网站地址：<span class="code">https://xxy13992859166-ops.github.io/suncable-website/</span></p>
+      </div>
+    </div>
+    
+    <h3>步骤二：验证所有权（使用HTML标签方式）</h3>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <p>选择验证方式：<strong>「HTML 标签」</strong>（HTML Tag）</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <p>复制下面的验证码：</p>
+        <div class="verification-code">msvalidate0123456789abcdef</div>
+        <p>在 Bing 页面的验证码输入框中粘贴此码</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-content">
+        <p>点击 <strong>「验证」</strong>（Verify），验证成功后站点即添加完成</p>
+      </div>
+    </div>
+    
+    <h3>步骤三：提交 Sitemap</h3>
+    <div class="step">
+      <div class="step-num">7</div>
+      <div class="step-content">
+        <p>验证通过后，进入站点管理页面 → 点击左侧 <strong>「Sitemaps」</strong></p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">8</div>
+      <div class="step-content">
+        <p>在输入框中输入：<span class="code">https://xxy13992859166-ops.github.io/suncable-website/sitemap.xml</span></p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">9</div>
+      <div class="step-content">
+        <p>点击 <strong>「提交」</strong>（Submit）</p>
+      </div>
+    </div>
+    
+    <div class="highlight success">
+      <strong>✅ Bing 提交完成：</strong>Bing 通常比 Google 更快抓取新站点，一般几小时内即可看到收录。
+    </div>
+  </div>
+
+  <!-- 快速链接 -->
+  <h2>🔗 快速操作链接</h2>
+  <div class="card">
+    <p style="margin-bottom:16px;color:#666;">点击下方链接直接跳转到对应页面：</p>
+    <a href="https://search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fxxy13992859166-ops.github.io%2Fsuncable-website%2F" target="_blank" class="btn">📋 Google Sitemap 页面</a>
+    <a href="https://www.bing.com/webmasters" target="_blank" class="btn outline">🔍 Bing Webmaster 首页</a>
+    <a href="https://xxy13992859166-ops.github.io/suncable-website/sitemap.xml" target="_blank" class="btn outline">🗺️ Sitemap 预览</a>
+    <a href="https://xxy13992859166-ops.github.io/suncable-website/" target="_blank" class="btn outline">🌐 访问网站</a>
+  </div>
+
+  <div class="card">
+    <h3>📊 当前网站状态</h3>
+    <table>
+      <tr><th>指标</th><th>数值</th></tr>
+      <tr><td>总页面数</td><td>149 HTML 页面</td></tr>
+      <tr><td>Sitemap URL 数</td><td>158</td></tr>
+      <tr><td>博客文章</td><td>46 篇</td></tr>
+      <tr><td>国家落地页</td><td>58 个</td></tr>
+      <tr><td>Google 验证</td><td>✅ 已完成</td></tr>
+      <tr><td>Bing 验证</td><td>⏳ 等待手动操作</td></tr>
+      <tr><td>Sitemap 可访问性</td><td>✅ 200 OK</td></tr>
+    </table>
+  </div>
+</div>
+</body>
+</html>
