@@ -952,4 +952,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
   </url>
+    <url>
+    <loc>https://xxy13992859166-ops.github.io/suncable-website/bing-verify-guide.html</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
   </urlset>
