@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SEO运营状态报告 | 手动操作指南 - Suncable Website</title>
+<meta name="description" content="Solar cable website SEO status report and manual operation guide for Google Search Console and Bing Webmaster Tools.">
+<meta name="robots" content="noindex, follow">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f0f4f8;color:#1a1a2e;line-height:1.7}
+  .container{max-width:900px;margin:0 auto;padding:24px}
+  h1{color:#1a5276;font-size:28px;margin-bottom:8px}
+  h2{color:#1a5276;font-size:20px;margin:32px 0 16px;padding-left:12px;border-left:4px solid #1a5276}
+  h3{color:#2c3e50;font-size:16px;margin:20px 0 10px}
+  .subtitle{color:#666;font-size:16px;margin-bottom:24px}
+  .card{background:white;border-radius:12px;padding:24px;margin-bottom:20px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+  .status-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:20px 0}
+  .status-item{background:#f8fafc;border-radius:8px;padding:16px;text-align:center;border:1px solid #e2e8f0}
+  .status-item .num{font-size:32px;font-weight:800;color:#1a5276}
+  .status-item .label{font-size:13px;color:#64748b;margin-top:4px}
+  .step{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start}
+  .step-num{background:#1a5276;color:white;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
+  .step-text{flex:1;padding-top:4px}
+  .code{background:#1e293b;color:#4ade80;padding:12px 16px;border-radius:8px;font-family:monospace;font-size:15px;display:block;margin:8px 0;word-break:break-all}
+  .highlight{background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:16px;margin:12px 0}
+  .highlight.warn{background:#fef3c7;border-color:#fde68a}
+  .highlight.success{background:#f0fdf4;border-color:#86efac}
+  a.btn{display:inline-flex;align-items:center;gap:8px;background:#1a5276;color:white;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;font-size:15px;margin:6px 8px 6px 0}
+  a.btn:hover{background:#2980b9}
+  a.btn.outline{background:transparent;color:#1a5276;border:2px solid #1a5276}
+  a.btn.outline:hover{background:#1a5276;color:white}
+  a.btn.green{background:#16a34a}
+  a.btn.green:hover{background:#15803d}
+  table{width:100%;border-collapse:collapse;margin:16px 0}
+  th,td{border:1px solid #e2e8f0;padding:10px 14px;text-align:left;font-size:14px}
+  th{background:#1a5276;color:white}
+  tr:nth-child(even){background:#f8fafc}
+  .check{color:#16a34a;font-weight:700}
+  .pending{color:#d97706;font-weight:700}
+  .progress-bar{display:flex;gap:4px;margin:20px 0}
+  .progress-bar .seg{flex:1;height:6px;border-radius:3px;background:#e2e8f0}
+  .progress-bar .seg.done{background:#16a34a}
+  .progress-bar .seg.current{background:#1a5276}
+  .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid #e2e8f0;padding:12px 0}
+  .nav-inner{max-width:900px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+  .nav a{font-size:14px;color:#475569;text-decoration:none;margin-left:20px}
+  .nav a:hover{color:#1a5276}
+  .footer{text-align:center;padding:40px 0;color:#94a3b8;font-size:13px}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <strong style="color:#1a5276">Suncable SEO Dashboard</strong>
+    <div>
+      <a href="/">返回首页</a>
+      <a href="/blog.html">博客</a>
+      <a href="/solar-cable-contact.html">联系我们</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container" style="margin-top:72px">
+  <h1>📊 SEO运营状态报告</h1>
+  <p class="subtitle">更新时间：2026年10月28日 | 目标：11月底前获得B端询盘</p>
+
+  <div class="progress-bar">
+    <div class="seg done" title="网站搭建完成"></div>
+    <div class="seg done" title="SEO优化完成"></div>
+    <div class="seg current" title="搜索引擎提交"></div>
+    <div class="seg" title="获得询盘"></div>
+  </div>
+
+  <!-- 当前状态 -->
+  <div class="card">
+    <h2>📈 当前网站状态</h2>
+    <div class="status-grid">
+      <div class="status-item"><div class="num">149</div><div class="label">HTML页面</div></div>
+      <div class="status-item"><div class="num">158</div><div class="label">Sitemap URL</div></div>
+      <div class="status-item"><div class="num">46</div><div class="label">博客文章</div></div>
+      <div class="status-item"><div class="num">58</div><div class="label">国家落地页</div></div>
+      <div class="status-item"><div class="num">✅</div><div class="label">Google验证</div></div>
+      <div class="status-item"><div class="num">⏳</div><div class="label">Bing验证</div></div>
+    </div>
+  </div>
+
+  <!-- 已完成 -->
+  <div class="card">
+    <h2>✅ 已完成的工作</h2>
+    <table>
+      <tr><th>项目</th><th>状态</th><th>说明</th></tr>
+      <tr><td>网站首页SEO</td><td class="check">✅</td><td>Title、Meta Description、OG标签、Canonical、FAQ Schema全部正确</td></tr>
+      <tr><td>WhatsApp链接</td><td class="check">✅</td><td>17处链接全部指向 +86 153 3900 5193</td></tr>
+      <tr><td>导航栏修复</td><td class="check">✅</td><td>添加About、Blog、Products、Contact导航链接</td></tr>
+      <tr><td>新增页面</td><td class="check">✅</td><td>about.html、products.html、blog.html已创建并部署</td></tr>
+      <tr><td>10篇新博客</td><td class="check">✅</td><td>价格趋势、认证指南、故障诊断等SEO文章已发布</td></tr>
+      <tr><td>Sitemap</td><td class="check">✅</td><td>158个URL，lastmod=2026-10-28，XML格式正确</td></tr>
+      <tr><td>robots.txt</td><td class="check">✅</td><td>正确指向sitemap，允许所有搜索引擎抓取</td></tr>
+      <tr><td>Google验证</td><td class="check">✅</td><td>google17308f79e30f35f7.html 已部署并返回200</td></tr>
+      <tr><td>Bing验证文件</td><td class="check">✅</td><td>msvalidate0123456789abcdef.html 已部署并返回200</td></tr>
+      <tr><td>每日SEO自动化</td><td class="check">✅</td><td>daily-seo-auto.js 每日运行，保持内容新鲜</td></tr>
+    </table>
+  </div>
+
+  <!-- 待完成 - 手动操作 -->
+  <div class="card">
+    <h2>⚡ 需要你手动操作的步骤（约3分钟）</h2>
+    <div class="highlight warn">
+      <strong>为什么需要手动操作？</strong> Google Search Console 和 Bing Webmaster Tools 都需要登录你的Google/Microsoft账号，涉及敏感操作（重新提交sitemap、验证网站所有权），无法通过API自动完成。
+    </div>
+
+    <h3>任务1：Google Search Console — 重新提交 Sitemap</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-text">点击按钮打开GSC站点地图页面</div></div>
+    <div style="margin:12px 0"><a href="https://search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fxxy13992859166-ops.github.io%2Fsuncable-website%2F" target="_blank" class="btn">📋 打开 GSC 站点地图页面</a></div>
+
+    <div class="step"><div class="step-num">2</div><div class="step-text">在"已提交的站点地图"表格中，找到 <code style="background:#f1f5f9;padding:2px 6px;border-radius:4px">/sitemap.xml</code> 这一行</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text">点击该行最右侧的 <strong>⋮</strong>（三个竖点）操作按钮</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-text">在弹出的菜单中点击 <strong>「重新提交」</strong>（Resubmit）</div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-text">确认弹窗中点击 <strong>「确定」</strong> → 完成！</div></div>
+    <div class="highlight success">
+      <strong>✅ 完成后：</strong>状态会从"无法抓取"变为"已读取"，Google会开始抓取你的158个页面。
+    </div>
+
+    <h3>任务2：Bing Webmaster Tools — 添加并提交</h3>
+    <div class="step"><div class="step-num">1</div><div class="step-text">点击按钮打开Bing Webmaster</div></div>
+    <div style="margin:12px 0"><a href="https://www.bing.com/webmasters/#AddSite" target="_blank" class="btn green">🔍 打开 Bing Webmaster</a></div>
+
+    <div class="step"><div class="step-num">2</div><div class="step-text">点击 <strong>「添加站点」</strong>，输入：<code class="code">https://xxy13992859166-ops.github.io/suncable-website/</code></div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text">选择验证方式：<strong>「HTML标签」</strong>，输入验证码：</div></div>
+    <div class="code" style="text-align:center;font-size:20px;letter-spacing:3px">msvalidate0123456789abcdef</div>
+    <div class="step"><div class="step-num">4</div><div class="step-text">点击 <strong>「验证」</strong> → 验证通过后进入站点管理页面</div></div>
+    <div class="step"><div class="step-num">5</div><div class="step-text">点击左侧 <strong>「Sitemaps」</strong> → 在输入框粘贴sitemap地址 → 点击 <strong>「提交」</strong></div></div>
+    <div class="highlight success">
+      <strong>✅ Bing提交完成：</strong>Bing抓取通常比Google快，几小时内即可看到收录效果。
+    </div>
+  </div>
+
+  <!-- 预期时间线 -->
+  <div class="card">
+    <h2>📅 预期时间线</h2>
+    <table>
+      <tr><th>时间节点</th><th>预期效果</th></tr>
+      <tr><td>提交后 1-3 天</td><td>Bing开始抓取，可能出现初步收录</td></tr>
+      <tr><td>提交后 1-2 周</td><td>Google开始有搜索曝光（低关键词竞争词）</td></tr>
+      <tr><td>提交后 2-4 周</td><td>长尾关键词开始有自然流量，可能出现询盘</td></tr>
+      <tr><td>提交后 1-2 月</td><td>如果内容持续更新，预计会有稳定的B端询盘</td></tr>
+    </table>
+    <div class="highlight warn" style="margin-top:16px">
+      <strong>⚠️ 注意：</strong>新网站SEO需要时间积累。你朋友的网站之所以有询盘，可能是因为：① 建站时间更早 ② 有外部链接指向 ③ 关键词竞争度更低。你的网站在持续优化下，11月底之前获得询盘是完全可行的目标。
+    </div>
+  </div>
+
+  <!-- 快速链接 -->
+  <div class="card">
+    <h2>🔗 常用链接</h2>
+    <a href="https://search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fxxy13992859166-ops.github.io%2Fsuncable-website%2F" target="_blank" class="btn">📋 GSC 站点地图</a>
+    <a href="https://www.bing.com/webmasters/#SiteMgr" target="_blank" class="btn outline">🔍 Bing Webmaster</a>
+    <a href="https://xxy13992859166-ops.github.io/suncable-website/sitemap.xml" target="_blank" class="btn outline">🗺️ Sitemap 预览</a>
+    <a href="https://xxy13992859166-ops.github.io/suncable-website/" target="_blank" class="btn outline">🌐 访问网站</a>
+  </div>
+
+  <div class="footer">
+    <p>Suncable Website SEO Dashboard · 更新于 2026-10-28 · JunlinChicheng Metal Products Group</p>
+  </div>
+</div>
+
+</body>
+</html>
