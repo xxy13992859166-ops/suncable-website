@@ -1,6 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FileSeqVersion>1</FileSeqVersion>
-<Verification>
-  <Domain>xxy13992859166-ops.github.io</Domain>
-  <FileHash>404448EBEF737E8DD6071896A454AE8B</FileHash>
-</Verification>
+{"type":"https://tools.ietf.org/html/rfc9110#section-15.5.2","title":"Unauthorized","status":401,"traceId":"00-4a3f8599854d6851e94de693949fc274-29fb001e2d6d37dd-00"}
