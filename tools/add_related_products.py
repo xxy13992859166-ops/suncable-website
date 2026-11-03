@@ -184,6 +184,33 @@ def build_crumbs(s, page_url):
     return crumbs if len(crumbs) >= 2 else None
 
 
+BLOG_ANCHOR = re.compile(r'(<a href=")([^"]+)("[^>]*>\s*Blog\s*</a>)', re.I)
+VISIBLE_FIXED = []
+
+
+def fix_visible_crumbs(path, s):
+    """Point the visible "Blog" breadcrumb at blog.html instead of the home page
+    or a single article, so the visible trail matches the BreadcrumbList."""
+    m = re.search(r'(?s)(<div class="breadcrumb">)(.*?)(</div>)', s)
+    if not m:
+        return s
+    inner = m.group(2)
+    target = BASE + "/blog.html"
+    pieces = BLOG_ANCHOR.findall(inner)
+    if not pieces:
+        return s
+    new_inner = BLOG_ANCHOR.sub(
+        lambda mm: mm.group(1) + target + mm.group(3)
+        if resolve(mm.group(2)) != ORIGIN + target
+        else mm.group(0),
+        inner,
+    )
+    if new_inner == inner:
+        return s
+    VISIBLE_FIXED.append(path.name)
+    return s[: m.start(2)] + new_inner + s[m.end(2):]
+
+
 def drop_existing_breadcrumb(s):
     """Remove any BreadcrumbList JSON-LD (ours or a previous variant)."""
     s = re.sub(r"(?s)<!-- BREADCRUMB_LD_START -->\s*", "", s)
@@ -219,6 +246,7 @@ def process(path):
         else:
             return "no-anchor", orig
 
+    s = fix_visible_crumbs(path, s)
     s = drop_existing_breadcrumb(s)
     page_url = ORIGIN + BASE + "/" + path.name
     crumbs = build_crumbs(s, page_url)
@@ -320,6 +348,7 @@ def main():
                 bad.append(p.name)
     dupes, dead = clean_sitemap(pathlib.Path("sitemap.xml"))
     sm = pathlib.Path("sitemap.xml").read_text(encoding="utf-8")
+    print("visible Blog anchors fixed:", len(VISIBLE_FIXED))
     print("sitemap duplicate urls removed:", dupes)
     print("sitemap dead entries removed:", dead)
     print("sitemap urls now:", len(re.findall(r"<loc>", sm)))
