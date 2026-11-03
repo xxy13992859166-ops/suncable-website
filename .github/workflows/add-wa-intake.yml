@@ -1,0 +1,19 @@
+name: add-wa-intake
+on:
+  push:
+    paths:
+      - '.github/workflows/add-wa-intake.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  inject:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/add_wa_intake.py
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then echo 'no changes'; else git commit -m 'Load WhatsApp intake script on every page' && git push; fi
