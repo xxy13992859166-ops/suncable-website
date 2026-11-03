@@ -1,0 +1,19 @@
+name: add-related-products
+on:
+  push:
+    paths:
+      - '.github/workflows/add-related-products.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  relate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/add_related_products.py
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if git diff --cached --quiet; then echo 'no changes'; else git commit -m 'Add Related products internal links and BreadcrumbList schema' && git push; fi
