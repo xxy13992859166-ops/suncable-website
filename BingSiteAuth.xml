@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<VerifyOperation>
-  <VerifyTool>BingSiteAuth</VerifyTool>
-  <FileName>BingSiteAuth.xml</FileName>
-  <SiteUrl>https://xxy13992859166-ops.github.io/suncable-website/</SiteUrl>
-  <FileContent>404448EBEF737E8DD6071896A454AE8B</FileContent>
-</VerifyOperation>
+<?xml version="1.0"?>
+<users>
+	<user>404448EBEF737E8DD6071896A454AE8B</user>
+</users>
