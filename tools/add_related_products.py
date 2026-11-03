@@ -10,6 +10,7 @@ Two passes, both idempotent:
 Runs from the repository root in GitHub Actions.
 """
 
+import html
 import json
 import pathlib
 import re
@@ -18,6 +19,7 @@ ORIGIN = "https://xxy13992859166-ops.github.io"
 BASE = "/suncable-website"
 HOME = ORIGIN + BASE + "/"
 PRODUCTS_INDEX = ORIGIN + BASE + "/products.html"
+BLOG_INDEX = ORIGIN + BASE + "/blog.html"
 
 # slug, link text, one-line blurb (blurbs reuse facts already stated on the pages)
 PRODUCTS = [
@@ -97,7 +99,12 @@ def related_block(slug):
 
 
 def strip_tags(text):
-    return re.sub(r"<[^>]+>", "", text).strip()
+    text = re.sub(r"<[^>]+>", "", text)
+    text = html.unescape(text).replace("\u203a", ">")
+    text = text.strip()
+    while text[:1] in ("/", ">", "|", "-", "\u2013"):
+        text = text[1:].strip()
+    return text.strip()
 
 
 def breadcrumb_jsonld(page_url, crumb_items):
@@ -132,8 +139,8 @@ def resolve(href):
     return ORIGIN + BASE + "/" + href
 
 
-def build_crumbs(s):
-    """Return [(name, url), ...] from the visible breadcrumb, or None."""
+def build_crumbs(s, page_url):
+    """Return a trail ending on page_url, derived from the visible breadcrumb."""
     m = re.search(r'<div class="breadcrumb">(.*?)</div>', s, re.S)
     if not m:
         return None
@@ -141,12 +148,58 @@ def build_crumbs(s):
     anchors = re.findall(r'<a href="([^"]*)"[^>]*>(.*?)</a>', inner, re.S)
     if not anchors:
         return None
-    crumbs = [(strip_tags(t), resolve(h)) for h, t in anchors]
-    tail = inner.rsplit("</a>", 1)[-1]
-    tail = strip_tags(tail.replace("&gt;", " ")).strip()
+
+    crumbs = []
+    for href, label in anchors:
+        name = strip_tags(label)
+        url = resolve(href)
+        # "Blog" is labelled on the site but linked to the homepage.
+        if name.lower() == "blog":
+            url = BLOG_INDEX
+        if not name:
+            continue
+        if crumbs and crumbs[-1][1] == url:
+            crumbs[-1] = (name, url)  # keep the more specific label
+            continue
+        crumbs.append((name, url))
+
+    tail = strip_tags(inner.rsplit("</a>", 1)[-1].replace("&gt;", " "))
     if tail:
-        crumbs.append((tail, None))
+        if crumbs and crumbs[-1][0].lower() == tail.lower():
+            crumbs[-1] = (tail, page_url)
+        else:
+            crumbs.append((tail, page_url))
+    elif not crumbs or crumbs[-1][1] != page_url:
+        h1 = re.search(r"<h1[^>]*>(.*?)</h1>", s, re.S)
+        name = strip_tags(h1.group(1)) if h1 else ""
+        if not name:
+            name = strip_tags(re.search(r"<title>(.*?)</title>", s, re.S).group(1).split("|")[0])
+        if crumbs and crumbs[-1][0].lower() == name.lower():
+            crumbs[-1] = (name, page_url)
+        else:
+            crumbs.append((name, page_url))
+
+    if not crumbs or crumbs[-1][1] != page_url:
+        return None
     return crumbs if len(crumbs) >= 2 else None
+
+
+def drop_existing_breadcrumb(s):
+    """Remove any BreadcrumbList JSON-LD (ours or a previous variant)."""
+    s = re.sub(r"(?s)<!-- BREADCRUMB_LD_START -->\s*", "", s)
+    s = re.sub(r"(?s)<!-- BREADCRUMB_LD_END -->\s*", "", s)
+
+    def repl(m):
+        block = m.group(0)
+        if '"BreadcrumbList"' not in block:
+            return block
+        try:
+            obj = json.loads(re.search(r"(?s)>(.*)</script>", block).group(1))
+        except Exception:
+            return ""
+        return "" if obj.get("@type") == "BreadcrumbList" else block
+
+    return re.sub(r'(?s)<script type="application/ld\+json">.*?</script>\n?', repl, s)
 
 
 def process(path):
@@ -166,14 +219,16 @@ def process(path):
         else:
             return "no-anchor", orig
 
-    if '"BreadcrumbList"' not in s:
-        crumbs = build_crumbs(s)
-        if crumbs:
-            page_url = ORIGIN + BASE + "/" + path.name
-            for i, (name, url) in enumerate(crumbs):
-                if url is None:
-                    crumbs[i] = (name, page_url)
-            s = s.replace("</head>", breadcrumb_jsonld(page_url, crumbs) + "</head>", 1)
+    s = drop_existing_breadcrumb(s)
+    page_url = ORIGIN + BASE + "/" + path.name
+    crumbs = build_crumbs(s, page_url)
+    if crumbs:
+        ld = (
+            "<!-- BREADCRUMB_LD_START -->\n"
+            + breadcrumb_jsonld(page_url, crumbs)
+            + "<!-- BREADCRUMB_LD_END -->\n"
+        )
+        s = s.replace("</head>", ld + "</head>", 1)
 
     if s == orig:
         return "unchanged", orig
@@ -217,6 +272,26 @@ def main():
             s = p.read_text(encoding="utf-8")
             ok = START in s and '"BreadcrumbList"' in s
             print("product %-26s block+breadcrumb=%s" % (slug, ok))
+
+    bad = []
+    for p in files:
+        s = p.read_text(encoding="utf-8")
+        page_url = ORIGIN + BASE + "/" + p.name
+        for block in re.findall(r"(?s)<script type=\"application/ld\+json\">(.*?)</script>", s):
+            try:
+                obj = json.loads(block)
+            except Exception:
+                continue
+            if obj.get("@type") != "BreadcrumbList":
+                continue
+            items = obj.get("itemListElement") or []
+            if not items or items[-1].get("item") != page_url:
+                bad.append(p.name)
+    print("breadcrumb trails not ending on own URL:", len(bad))
+    for name in bad[:10]:
+        print("  off-trail", name)
+    if bad:
+        raise SystemExit(1)
     if errors:
         raise SystemExit(1)
 
