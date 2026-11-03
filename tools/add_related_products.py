@@ -236,6 +236,37 @@ def process(path):
     return "updated", s
 
 
+def clean_sitemap(path):
+    """Drop duplicate <url> blocks and entries whose local page does not exist."""
+    s = path.read_text(encoding="utf-8")
+    blocks = re.findall(r"(?s)<url>.*?</url>", s)
+    if not blocks:
+        return 0, 0
+    seen = set()
+    kept = []
+    dupes = dead = 0
+    for block in blocks:
+        m = re.search(r"<loc>(.*?)</loc>", block, re.S)
+        if not m:
+            continue
+        url = m.group(1).strip()
+        if url in seen:
+            dupes += 1
+            continue
+        tail = url.split("/suncable-website/", 1)[-1]
+        if tail and tail.endswith(".html") and not pathlib.Path(tail).exists():
+            dead += 1
+            continue
+        seen.add(url)
+        kept.append(block.strip())
+    start = s.index("<url>")
+    end = s.rindex("</urlset>")
+    out = s[:start] + "".join("  " + b + "\n" for b in kept) + s[end:]
+    if out != s:
+        path.write_text(out, encoding="utf-8")
+    return dupes, dead
+
+
 def main():
     root = pathlib.Path(".")
     files = [p for p in sorted(root.glob("*.html")) if p.name not in SKIP]
@@ -287,6 +318,11 @@ def main():
             items = obj.get("itemListElement") or []
             if not items or items[-1].get("item") != page_url:
                 bad.append(p.name)
+    dupes, dead = clean_sitemap(pathlib.Path("sitemap.xml"))
+    sm = pathlib.Path("sitemap.xml").read_text(encoding="utf-8")
+    print("sitemap duplicate urls removed:", dupes)
+    print("sitemap dead entries removed:", dead)
+    print("sitemap urls now:", len(re.findall(r"<loc>", sm)))
     print("breadcrumb trails not ending on own URL:", len(bad))
     for name in bad[:10]:
         print("  off-trail", name)
