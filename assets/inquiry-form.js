@@ -38,6 +38,7 @@
       '<input type="hidden" name="_subject" value="Inquiry from ' + location.pathname + '">',
       '<input type="hidden" name="_captcha" value="false">',
       '<input type="hidden" name="_template" value="table">',
+      '<input type="hidden" name="_autoresponse" value="Thanks for your inquiry - we have received it. Alice, our sales manager, replies within 2 business hours (Mon-Sat, 08:00-20:00 GMT+8).\n\nTo get pricing in the first reply, please send:\n1) cable type and size (e.g. H1Z2Z2-K 1x6mm2)\n2) quantity in metres\n3) destination port or delivery city\n\nNeed it faster? WhatsApp +86 153 3900 5193, or just reply to this email.\n\nJLCC - JunlinChicheng Metal Products Group Co., Ltd.">',
       '<input type="hidden" name="_next" value="' + NEXT + '">',
       '<input type="hidden" name="source_page" value="' + location.href + '">',
       '<div class="jlcc-honey"><label>Do not fill</label><input type="text" name="_honey" tabindex="-1" autocomplete="off"></div>',
