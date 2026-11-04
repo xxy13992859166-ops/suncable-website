@@ -1,0 +1,26 @@
+name: seo-batch4
+on:
+  push:
+    paths:
+      - '.github/workflows/seo-batch4.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  seo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fix canonical, prune sitemap, consolidate duplicates
+        run: python3 tools/seo_batch4.py --apply
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "SEO batch 4: fix broken canonicals, prune utility pages from sitemap, retire duplicate country hubs"
+            git push
+          fi
