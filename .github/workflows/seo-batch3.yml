@@ -1,0 +1,26 @@
+name: seo-batch3
+on:
+  push:
+    paths:
+      - '.github/workflows/seo-batch3.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  seo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Put 20+ years into descriptions
+        run: python3 tools/seo_batch3.py --apply
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "SEO batch 3: 20+ years credential in meta descriptions"
+            git push
+          fi
