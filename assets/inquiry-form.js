@@ -1,8 +1,9 @@
-/* Inquiry form v3 - relay-free.
+/* Inquiry form v4 - relay-free.
    Nothing is posted to a third-party service, so no relay outage can swallow an
    inquiry. On submit the visitor's own details are composed into a ready-to-send
-   WhatsApp message and a ready-to-send email, and a panel offers both plus a
-   copy button. Works with or without a configured desktop mail client. */
+   message and a panel offers WhatsApp, their mail app, Gmail web compose,
+   Outlook web compose, and copy. The web-compose routes matter because a large
+   share of B2B buyers work in browser mail with no desktop mail client. */
 (function () {
   if (window.__jlccInquiryFormLoaded) { return; }
   window.__jlccInquiryFormLoaded = true;
@@ -22,12 +23,20 @@
     var body = 'Name: ' + name + '\nCompany: ' + company + '\nEmail: ' + email +
       '\nPhone / WhatsApp: ' + phone + '\n\nRequirement:\n' + msg +
       '\n\nPage: ' + location.href;
+    // Web compose URLs break past roughly 2000 characters, so the link copy of
+    // the body is capped and the untruncated text stays available via Copy.
+    var link = body.length > 1500 ? body.slice(0, 1500) + '\n\n[continued - use Copy for the full text]' : body;
+    var sub = encodeURIComponent(subject);
+    var bod = encodeURIComponent(link);
     return {
       subject: subject,
       body: body,
       wa: WA + '?text=' + encodeURIComponent(subject + '\n\n' + body),
-      mail: 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) +
-        '&body=' + encodeURIComponent(body),
+      mail: 'mailto:' + EMAIL + '?subject=' + sub + '&body=' + bod,
+      gmail: 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(EMAIL) +
+        '&su=' + sub + '&body=' + bod,
+      outlook: 'https://outlook.office.com/mail/deeplink/compose?to=' + encodeURIComponent(EMAIL) +
+        '&subject=' + sub + '&body=' + bod,
       full: 'To: ' + EMAIL + '\nSubject: ' + subject + '\n\n' + body
     };
   }
@@ -59,15 +68,21 @@
     var box = document.createElement('div');
     box.id = 'jlcc-send-panel';
     box.setAttribute('style', 'margin-top:14px;padding:16px 18px;border-radius:8px;background:#eff6ff;border:1px solid #93c5fd;color:#1e3a5f;font-size:14px;line-height:1.6');
+    var btnStyle = 'padding:11px 18px;border-radius:6px;text-decoration:none;font-weight:600;display:inline-block';
     box.innerHTML =
-      '<strong>Your inquiry is ready to send.</strong> Choose one - we reply to whichever you pick.' +
-      '<div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">' +
-      '<a href="' + t.wa + '" data-wa-intake="1" target="_blank" rel="noopener" style="padding:11px 18px;border-radius:6px;background:#16a34a;color:#fff;text-decoration:none;font-weight:600">Send on WhatsApp (fastest)</a>' +
-      '<a href="' + t.mail + '" style="padding:11px 18px;border-radius:6px;background:#2563eb;color:#fff;text-decoration:none;font-weight:600">Send by email</a>' +
-      '<button type="button" id="jlcc-copy" style="padding:11px 18px;border-radius:6px;border:1px solid #93c5fd;background:#fff;color:#1e3a5f;font-weight:600;cursor:pointer">Copy the text</button>' +
+      '<strong>Your inquiry is written. Pick where to send it - we reply to whichever you use.</strong>' +
+      '<div style="margin-top:12px">' +
+      '<a href="' + t.wa + '" data-wa-intake="1" target="_blank" rel="noopener" style="' + btnStyle + ';background:#16a34a;color:#fff">WhatsApp (fastest)</a>' +
       '</div>' +
-      '<p style="margin:12px 0 0;font-size:12px;color:#475569">Your text is already inside both buttons. If neither opens, use Copy and send it to ' +
-      EMAIL + ' or WhatsApp +86 153 3900 5193.</p>';
+      '<div style="margin-top:8px;font-size:12px;color:#475569">By email - your details are already filled in:</div>' +
+      '<div style="margin-top:6px;display:flex;gap:8px;flex-wrap:wrap">' +
+      '<a href="' + t.gmail + '" target="_blank" rel="noopener" style="' + btnStyle + ';background:#2563eb;color:#fff">Open in Gmail</a>' +
+      '<a href="' + t.outlook + '" target="_blank" rel="noopener" style="' + btnStyle + ';background:#0f6cbd;color:#fff">Open in Outlook</a>' +
+      '<a href="' + t.mail + '" style="' + btnStyle + ';background:#334155;color:#fff">My mail app</a>' +
+      '<button type="button" id="jlcc-copy" style="padding:11px 18px;border-radius:6px;border:1px solid #93c5fd;background:#fff;color:#1e3a5f;font-weight:600;cursor:pointer">Copy text</button>' +
+      '</div>' +
+      '<p style="margin:12px 0 0;font-size:12px;color:#475569">Nothing is sent until you press send in WhatsApp or in your mail window. ' +
+      'If no button opens, use Copy text and write to ' + EMAIL + ' or WhatsApp +86 153 3900 5193.</p>';
 
     var btn = f.querySelector('button[type="submit"]') || f.querySelector('button');
     if (btn && btn.parentNode) { btn.parentNode.insertBefore(box, btn.nextSibling); }
