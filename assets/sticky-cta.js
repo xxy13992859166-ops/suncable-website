@@ -30,7 +30,7 @@
 
     var q = bar.querySelector(".jlcc-q");
     q.addEventListener("click", function (e) {
-      var target = document.getElementById("jlcc-inquiry") || document.querySelector("form[action*='formsubmit.co']");
+      var target = document.getElementById("jlcc-inquiry") || document.querySelector("form[data-jlcc-form]") || document.getElementById("contact");
       if (!target) { return; }
       e.preventDefault();
       target.scrollIntoView({ behavior: "smooth", block: "start" });

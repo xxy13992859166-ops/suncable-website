@@ -1,90 +1,128 @@
-/* Inquiry form v2 - resilient submit.
-   Posts by fetch; if the relay is unreachable or rejects the submission the
-   visitor gets a prefilled email and WhatsApp fallback instead of a fake
-   thankyou page. Native POST still works without JS. */
+/* Inquiry form v3 - relay-free.
+   Nothing is posted to a third-party service, so no relay outage can swallow an
+   inquiry. On submit the visitor's own details are composed into a ready-to-send
+   WhatsApp message and a ready-to-send email, and a panel offers both plus a
+   copy button. Works with or without a configured desktop mail client. */
 (function () {
   if (window.__jlccInquiryFormLoaded) { return; }
   window.__jlccInquiryFormLoaded = true;
 
   var EMAIL = 'xxy13992859166@gmail.com';
-  var ACTION = 'https://formsubmit.co/' + EMAIL;
-  var AJAX = 'https://formsubmit.co/ajax/' + EMAIL;
   var WA = 'https://wa.me/8615339005193';
-  var NEXT = 'https://xxy13992859166-ops.github.io/suncable-website/thankyou.html';
 
-  function field(form, n) {
-    var el = form.querySelector('[name="' + n + '"]');
-    return el ? String(el.value || '') : '';
+  function val(f, n) {
+    var el = f.querySelector('[name="' + n + '"]');
+    return el ? String(el.value || '').trim() : '';
   }
 
-  function showFallback(form, why) {
-    var name = field(form, 'name'), company = field(form, 'company');
-    var email = field(form, 'email'), phone = field(form, 'phone');
-    var msg = field(form, 'message');
+  function compose(f) {
+    var name = val(f, 'name'), company = val(f, 'company');
+    var email = val(f, 'email'), phone = val(f, 'phone'), msg = val(f, 'message');
     var subject = 'Solar cable inquiry - ' + (company || name || 'website');
     var body = 'Name: ' + name + '\nCompany: ' + company + '\nEmail: ' + email +
-      '\nPhone: ' + phone + '\n\n' + msg + '\n\nSent from: ' + location.href;
-    var mail = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(body);
-    var wa = WA + '?text=' + encodeURIComponent('Inquiry from ' + location.pathname + '\n' + body);
+      '\nPhone / WhatsApp: ' + phone + '\n\nRequirement:\n' + msg +
+      '\n\nPage: ' + location.href;
+    return {
+      subject: subject,
+      body: body,
+      wa: WA + '?text=' + encodeURIComponent(subject + '\n\n' + body),
+      mail: 'mailto:' + EMAIL + '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(body),
+      full: 'To: ' + EMAIL + '\nSubject: ' + subject + '\n\n' + body
+    };
+  }
 
-    var old = document.getElementById('jlcc-fallback');
-    if (old) { old.parentNode.removeChild(old); }
+  function copyText(text, done) {
+    var fallback = function () {
+      try {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('style', 'position:fixed;left:-9999px;top:0');
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        done();
+      } catch (e) { /* leave the message visible for manual copy */ }
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else {
+      fallback();
+    }
+  }
+
+  function panel(f, t) {
+    var old = document.getElementById('jlcc-send-panel');
+    if (old && old.parentNode) { old.parentNode.removeChild(old); }
+
     var box = document.createElement('div');
-    box.id = 'jlcc-fallback';
-    box.setAttribute('style', 'margin-top:14px;padding:14px 16px;border-radius:8px;background:#fff7ed;border:1px solid #f0b46b;color:#7a4a10;font-size:14px;line-height:1.55');
-    box.innerHTML = '<strong>Our form relay did not respond.</strong><br>' +
-      'Your details are still in the form. Send them directly and we will reply the same way:' +
-      '<div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">' +
-      '<a href="' + mail + '" style="padding:9px 14px;border-radius:6px;background:#2563eb;color:#fff;text-decoration:none;font-weight:600">Email us (prefilled)</a>' +
-      '<a href="' + wa + '" target="_blank" rel="noopener" style="padding:9px 14px;border-radius:6px;background:#16a34a;color:#fff;text-decoration:none;font-weight:600">WhatsApp</a>' +
-      '</div>';
-    var btn = form.querySelector('button');
+    box.id = 'jlcc-send-panel';
+    box.setAttribute('style', 'margin-top:14px;padding:16px 18px;border-radius:8px;background:#eff6ff;border:1px solid #93c5fd;color:#1e3a5f;font-size:14px;line-height:1.6');
+    box.innerHTML =
+      '<strong>Your inquiry is ready to send.</strong> Choose one - we reply to whichever you pick.' +
+      '<div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">' +
+      '<a href="' + t.wa + '" data-wa-intake="1" target="_blank" rel="noopener" style="padding:11px 18px;border-radius:6px;background:#16a34a;color:#fff;text-decoration:none;font-weight:600">Send on WhatsApp (fastest)</a>' +
+      '<a href="' + t.mail + '" style="padding:11px 18px;border-radius:6px;background:#2563eb;color:#fff;text-decoration:none;font-weight:600">Send by email</a>' +
+      '<button type="button" id="jlcc-copy" style="padding:11px 18px;border-radius:6px;border:1px solid #93c5fd;background:#fff;color:#1e3a5f;font-weight:600;cursor:pointer">Copy the text</button>' +
+      '</div>' +
+      '<p style="margin:12px 0 0;font-size:12px;color:#475569">Your text is already inside both buttons. If neither opens, use Copy and send it to ' +
+      EMAIL + ' or WhatsApp +86 153 3900 5193.</p>';
+
+    var btn = f.querySelector('button[type="submit"]') || f.querySelector('button');
     if (btn && btn.parentNode) { btn.parentNode.insertBefore(box, btn.nextSibling); }
-    else { form.appendChild(box); }
+    else { f.appendChild(box); }
+
+    var cp = document.getElementById('jlcc-copy');
+    if (cp) {
+      cp.addEventListener('click', function () {
+        copyText(t.full, function () {
+          cp.textContent = 'Copied - now paste it';
+        });
+      });
+    }
+    try { box.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
   }
 
   function onSubmit(e) {
-    var form = e.target;
-    if (!form || form.getAttribute('action') === null) { return; }
+    var f = e.target;
+    if (!f || !f.querySelector('[name="message"]')) { return; }
     e.preventDefault();
-    var btn = form.querySelector('button');
-    var label = btn ? btn.textContent : '';
-    if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
-    var ctrl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
-    var timer = setTimeout(function () { if (ctrl) { ctrl.abort(); } }, 12000);
-    var opts = { method: 'POST', body: new FormData(form) };
-    if (ctrl) { opts.signal = ctrl.signal; }
-    fetch(AJAX, opts).then(function (r) {
-      clearTimeout(timer);
-      if (!r.ok) { throw new Error('HTTP ' + r.status); }
-      return r.json().catch(function () { return {}; });
-    }).then(function (j) {
-      if (j && (j.success === false || j.success === 'false')) {
-        throw new Error('relay rejected');
-      }
-      location.href = NEXT;
-    }).catch(function () {
-      clearTimeout(timer);
-      if (btn) { btn.disabled = false; btn.textContent = label || 'Send Inquiry'; }
-      showFallback(form, 'relay');
-    });
+    var t = compose(f);
+    panel(f, t);
+  }
+
+  function wire(f) {
+    if (!f || f.getAttribute('data-jlcc-wired') === '1') { return; }
+    f.setAttribute('data-jlcc-wired', '1');
+    f.setAttribute('data-jlcc-form', '1');
+    f.addEventListener('submit', onSubmit);
+  }
+
+  function existingForm() {
+    var f = document.querySelector('form[data-jlcc-form]') ||
+      document.querySelector('form[action^="mailto:"]');
+    if (f) { return f; }
+    var all = document.getElementsByTagName('form');
+    for (var i = 0; i < all.length; i++) {
+      if (all[i].querySelector('[name="message"]')) { return all[i]; }
+    }
+    return null;
   }
 
   function mount() {
+    var found = existingForm();
+    if (found) { wire(found); return; }
     if (document.getElementById('jlcc-inquiry')) { return; }
+
     var section = document.createElement('section');
     section.id = 'jlcc-inquiry';
+    section.setAttribute('style', 'padding:40px 16px;background:#f1f5f9;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif');
     section.innerHTML = [
       '<div style="max-width:960px;margin:0 auto">',
       '<h2>Request a Quote</h2>',
       '<p style="margin:0 0 18px;color:#475569;font-size:14px">Send your specification and quantity - we reply with price, lead time and packing.</p>',
-      '<form action="' + ACTION + '" method="POST">',
-      '<input type="hidden" name="_subject" value="Inquiry from ' + location.pathname + '">',
-      '<input type="hidden" name="_captcha" value="false">',
-      '<input type="hidden" name="_template" value="table">',
-      '<input type="hidden" name="_next" value="' + NEXT + '">',
-      '<input type="hidden" name="source_page" value="' + location.href + '">',
+      '<form data-jlcc-form action="mailto:' + EMAIL + '?subject=Solar%20cable%20inquiry" method="post" enctype="text/plain">',
       '<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px">',
       '<label style="flex:1 1 220px;font-size:12px;color:#334155">Your Name *<br><input type="text" name="name" required style="width:100%;padding:10px;margin-top:5px;border:1px solid #cbd5e1;border-radius:6px"></label>',
       '<label style="flex:1 1 220px;font-size:12px;color:#334155">Company<br><input type="text" name="company" style="width:100%;padding:10px;margin-top:5px;border:1px solid #cbd5e1;border-radius:6px"></label>',
@@ -93,18 +131,20 @@
       '<label style="flex:1 1 220px;font-size:12px;color:#334155">Email *<br><input type="email" name="email" required style="width:100%;padding:10px;margin-top:5px;border:1px solid #cbd5e1;border-radius:6px"></label>',
       '<label style="flex:1 1 220px;font-size:12px;color:#334155">WhatsApp / Phone<br><input type="text" name="phone" style="width:100%;padding:10px;margin-top:5px;border:1px solid #cbd5e1;border-radius:6px"></label>',
       '</div>',
-      '<label style="display:block;font-size:12px;color:#334155">Requirement *<br><textarea name="message" required style="width:100%;min-height:110px;padding:10px;margin-top:5px;border:1px solid #cbd5e1;border-radius:6px"></textarea></label>',
-      '<button type="submit" style="margin-top:12px;padding:12px 22px;border:0;border-radius:6px;background:#2563eb;color:#fff;font-size:15px;font-weight:600;cursor:pointer">Send Inquiry</button>',
-      '<p style="margin:10px 0 0;font-size:12px;color:#64748b">Typical reply within 2 hours on business days. Or WhatsApp +86 153 3900 5193.</p>',
+      '<label style="display:block;font-size:12px;color:#334155">Requirement *<br><textarea name="message" required style="width:100%;min-height:110px;padding:10px;margin-top:5px;border:1px solid #cbd5e1;border-radius:6px" placeholder="Cable type and size, quantity in metres, destination port"></textarea></label>',
+      '<div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">',
+      '<button type="submit" style="padding:12px 22px;border:0;border-radius:6px;background:#2563eb;color:#fff;font-size:15px;font-weight:600;cursor:pointer">Send Inquiry</button>',
+      '<a href="' + WA + '?text=' + encodeURIComponent('Hi, I would like a quote for solar cable.') + '" target="_blank" rel="noopener" style="padding:12px 22px;border-radius:6px;background:#16a34a;color:#fff;font-size:15px;font-weight:600;text-decoration:none">WhatsApp</a>',
+      '</div>',
+      '<p style="margin:10px 0 0;font-size:12px;color:#64748b">We reply within 2 business hours (Mon-Sat, 08:00-20:00 GMT+8).</p>',
       '</form>',
       '</div>'
     ].join('');
-    section.setAttribute('style', 'padding:40px 16px;background:#f1f5f9;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif');
+
     var footer = document.querySelector('footer');
     if (footer && footer.parentNode) { footer.parentNode.insertBefore(section, footer); }
     else { document.body.appendChild(section); }
-    var form = section.querySelector('form');
-    if (form) { form.addEventListener('submit', onSubmit); }
+    wire(section.querySelector('form'));
   }
 
   if (document.readyState === 'loading') {
