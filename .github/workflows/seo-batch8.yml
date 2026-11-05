@@ -1,0 +1,39 @@
+name: seo-batch8
+on:
+  push:
+    paths:
+      - 'tools/seo_batch8.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: seo-batch8
+  cancel-in-progress: false
+jobs:
+  batch8:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run normaliser
+        run: |
+          if [ ! -f tools/seo_batch8.py ]; then
+            echo "script not present, nothing to do"
+            exit 0
+          fi
+          python tools/seo_batch8.py
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "SEO batch 8: restore + sign in -40/+90 C temperature ranges"
+            git push
+          fi
