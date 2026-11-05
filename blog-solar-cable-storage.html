@@ -123,47 +123,38 @@
     
     <div class="container">
         <div class="content">
-            <h2>Introduction</h2>
-            <p>JunlinChicheng Metal Products Group Co., Ltd. provides professional solar cable solutions for energy storage cable. With over 20 years of manufacturing experience and TUV/UL certification, we ensure every cable meets international quality standards.</p>
-            
-            <h2>Key Specifications</h2>
-            <ul>
-                <li><strong>Cable Type:</strong> PV1-F / H1Z2Z2-K certified solar cable</li>
-                <li><strong>Temperature Range:</strong> -40°C to +90°C</li>
-                <li><strong>UV Resistance:</strong> Excellent resistance to ultraviolet degradation</li>
-                <li><strong>Warranty:</strong> 25-year performance guarantee</li>
-                <li><strong>Certifications:</strong> TUV, UL, CE certified</li>
-            </ul>
-            
-            <h2>Why Choose Our Solar Cables?</h2>
-            <p>Our solar cables are manufactured using premium XLPO (Cross-linked Polyolefin) insulation material, providing superior electrical conductivity and environmental resistance. Each production batch undergoes rigorous quality testing including:</p>
-            <ul>
-                <li>Insulation resistance testing</li>
-                <li>Voltage withstand testing</li>
-                <li>Thermal aging testing</li>
-                <li>UV exposure testing</li>
-                <li>Mechanical stress testing</li>
-            </ul>
-            
-            <h2>Product Applications</h2>
-            <p>Our solar cables are suitable for various applications including:</p>
-            <ul>
-                <li>Residential rooftop solar installations</li>
-                <li>Commercial solar power plants</li>
-                <li>Industrial solar projects</li>
-                <li>Utility-scale solar farms</li>
-                <li>Off-grid solar systems</li>
-            </ul>
-            
-            <h2>Technical Support</h2>
-            <p>Our engineering team provides comprehensive technical support including cable sizing calculations, installation guidance, and troubleshooting assistance. Contact us for a free consultation.</p>
-            
-            <div style="background: #e8f4fc; padding: 20px; border-radius: 8px; margin: 30px 0; text-align: center;">
-                <h3 style="color: #1a5276; margin-bottom: 10px;">Get a Free Quote</h3>
-                <p>Reach us via WhatsApp for instant response</p>
-                <a href="https://wa.me/8615339005193?text=Hi, I need a quote for Energy%20Storage%20Cable%20Solutions" class="cta-btn" style="margin-top: 15px;">📱 WhatsApp Us</a>
+            <!-- b7 -->
+<h2>Battery cable is a current problem</h2>
+        <p>The PV side is designed around voltage and voltage drop. The battery side is designed around current: hundreds of amps at low voltage, in a confined space, next to equipment that must not be exposed to smoke. That is why the correct product is not PV cable with a different label, but a low-smoke halogen-free DC cable sized on current.</p>
+
+        <h2>Sizing the battery-to-inverter run</h2>
+        <ul>
+          <li><strong>Current first.</strong> Take the inverter's maximum DC current, add the margin the manufacturer specifies, then check the cable against the ambient inside the enclosure — not the room.</li>
+          <li><strong>Short-circuit withstand.</strong> A battery can deliver fault current far above its rating. The protective device and the cable have to be coordinated so the device clears the fault before the cable is damaged.</li>
+          <li><strong>Equal links in parallel banks.</strong> Every parallel string should have the same cable length and cross-section, or the strings will not share current evenly.</li>
+        </ul>
+
+        <h2>Why low smoke, and where it matters</h2>
+        <table>
+          <thead>
+            <tr><th>Location</th><th>Construction</th><th>Reason</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Battery room / container</td><td>LSZH DC cable, 0.6/1 kV</td><td>Smoke and halogen emission in an occupied or enclosed space</td></tr>
+            <tr><td>Indoor cabinet to inverter</td><td>LSZH DC cable</td><td>Confined route, high current</td></tr>
+            <tr><td>Outdoor DC between cabinets</td><td>PV or DC cable per the enclosure rating</td><td>UV and water rather than smoke</td></tr>
+          </tbody>
+        </table>
+
+        <h2>Routing in confined spaces</h2>
+        <p>Battery containers are tight, hot, and packed with equipment. Three practical rules: keep the DC power cables physically separated from communication and sensing leads, respect the bend radius at the tightest corner in the enclosure rather than at the drum, and leave enough slack at the terminals for a re-termination without re-pulling the run.</p>
+
+        <h2>Commissioning checks worth doing</h2>
+        <p>Torque every terminal and mark it, measure insulation resistance before energising, and record the readings by circuit. Then measure contact temperature under load at the first opportunity: a termination that runs noticeably warmer than its neighbours is the one that will fail, and it will fail at the worst time for the site.</p>
+
+        <h2>What we supply</h2>
+        <p>Storage battery DC cable: LSZH, 0.6/1 kV, TÜV certified, with matching lugs and the documentation the enclosure inspector asks for. Send the inverter model, bank voltage and run lengths to <a href="/suncable-website/solar-cable-request-quote.html">the quotation page</a>.</p>
             </div>
-        </div>
         
         <div class="sidebar">
             <h3>Related Articles</h3>
@@ -204,7 +195,7 @@
     </footer>
     
     <a href="https://wa.me/8615339005193?text=Hi, I visited your website and have a question" class="whatsapp-float">💬 WhatsApp</a>
-<script src="/suncable-website/assets/inquiry-form.js" defer></script>
+<script src="/suncable-website/assets/inquiry-form.js?v=2" defer></script>
 <script src="/suncable-website/assets/sticky-cta.js" defer></script>
 <script src="/suncable-website/assets/wa-intake.js" defer></script>
 </body>
