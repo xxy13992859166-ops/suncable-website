@@ -1,0 +1,39 @@
+name: seo-batch9
+on:
+  push:
+    paths:
+      - 'tools/seo_batch9.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: seo-batch9
+  cancel-in-progress: false
+jobs:
+  batch9:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install relay-free inquiry form
+        run: |
+          if [ ! -f tools/seo_batch9.py ]; then
+            echo "script not present, nothing to do"
+            exit 0
+          fi
+          python tools/seo_batch9.py
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "no changes"
+          else
+            git commit -m "Inquiry capture: drop dead FormSubmit relay, compose-and-handoff form"
+            git push
+          fi
