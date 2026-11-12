@@ -1,0 +1,70 @@
+# JunlinChicheng Solar Cable
+
+> JunlinChicheng Metal Products Group Co., Ltd. manufactures TUV- and UL-certified solar PV cable, MC4 connectors and PV system components in Xi'an, Shaanxi Province, China, and exports them to 50+ countries.
+
+- Site: https://xxy13992859166-ops.github.io/suncable-website/
+- Primary language: English. Chinese section: https://xxy13992859166-ops.github.io/suncable-website/zh/
+- Page index for crawlers: https://xxy13992859166-ops.github.io/suncable-website/sitemap.xml
+- Human-readable index of every page: https://xxy13992859166-ops.github.io/suncable-website/site-map.html
+- Last reviewed: 2026-11-12
+
+Every statement below is taken from the linked page. Product pages state standard, rated
+voltage, conductor, insulation and certification; price and lead time are answered per
+project through the quote page.
+
+## Products
+
+- [Solar Cable Products](https://xxy13992859166-ops.github.io/suncable-website/products.html): range overview covering PV1-F, H1Z2Z2-K and MC4 connectors.
+- [PV1-F Solar Cable](https://xxy13992859166-ops.github.io/suncable-website/pv1-f-solar-cable.html): 2-core 0.6/1 kV, XLPO insulated, 1 to 6 mm2, TUV and UL certified.
+- [H1Z2Z2-K Solar Cable](https://xxy13992859166-ops.github.io/suncable-website/h1z2z2-k-solar-cable.html): single-core 1 kV to IEC 62930, TUV approved, 1.5 to 6 mm2, for DC string connections.
+- [MC4 Solar Connector](https://xxy13992859166-ops.github.io/suncable-website/mc4-connector.html): MC4-Evo2 male/female pair, IP68, 1500 V DC, TUV certified.
+- [Storage Battery DC Cable](https://xxy13992859166-ops.github.io/suncable-website/solar-cable-storage.html): low-smoke halogen-free DC cable for battery banks, 0.6/1 kV, TUV certified.
+- [AC Power Cable 450/750 V](https://xxy13992859166-ops.github.io/suncable-website/solar-cable-ac.html): 3-core AC cable for inverter output and distribution circuits, IEC 60228 conductor.
+- [PV Combiner Box](https://xxy13992859166-ops.github.io/suncable-website/solar-cable-combiner.html): 6, 8, 12 or 16 inputs, IP65 enclosure, surge protection and DC disconnect, IEC 61439.
+
+## Company
+
+- [About JunlinChicheng](https://xxy13992859166-ops.github.io/suncable-website/about.html): manufacturer profile, certifications and quality control.
+- [FAQ](https://xxy13992859166-ops.github.io/suncable-website/faq.html): answers on specifications, TUV/UL certification, lead time and custom manufacturing.
+- [Solar Cable FAQ (extended)](https://xxy13992859166-ops.github.io/suncable-website/solar-cable-faq-extended.html): longer question-and-answer guide about PV cables.
+- [Contact](https://xxy13992859166-ops.github.io/suncable-website/solar-cable-contact.html): quotes and technical support channel.
+- [Export Markets](https://xxy13992859166-ops.github.io/suncable-website/export-markets.html): which certificate each region asks for (TUV, UL, CE, SABS, SONCAP, SASO).
+- [Project Cases](https://xxy13992859166-ops.github.io/suncable-website/solar-cable-case-studies.html): installation gallery by market.
+
+## Buying and importing
+
+- [Import Solar Cables from China](https://xxy13992859166-ops.github.io/suncable-website/import-solar-cables-china.html): factory pricing, export documents and delivery to 50+ countries.
+- [How to Import Solar Cables from China](https://xxy13992859166-ops.github.io/suncable-website/how-to-import-solar-cables-from-china.html): step-by-step guide covering certification, shipping and customs.
+- [How to Choose a Solar Cable Supplier](https://xxy13992859166-ops.github.io/suncable-website/how-to-choose-solar-cable-supplier.html): certifications, quality standards and pricing factors.
+- [How to Verify Supplier Quality](https://xxy13992859166-ops.github.io/suncable-website/how-to-verify-solar-cable-supplier-quality.html): seven checks before ordering.
+- [Solar Cable Certification Guide](https://xxy13992859166-ops.github.io/suncable-website/solar-cable-certification-guide.html): TUV Rheinland, UL Listed, CE, SABS, SONCAP and KEBS explained.
+- [Request a Quote](https://xxy13992859166-ops.github.io/suncable-website/solar-cable-request-quote.html): send a specification and get a reply.
+- [Order Free Samples](https://xxy13992859166-ops.github.io/suncable-website/solar-cable-sample-order.html): PV1-F and H1Z2Z2-K samples to test before bulk ordering.
+
+## Knowledge centre
+
+- [Solar Cable Blog](https://xxy13992859166-ops.github.io/suncable-website/blog.html): index of all guides and articles.
+- [PV1-F vs H1Z2Z2-K](https://xxy13992859166-ops.github.io/suncable-website/blog-pv1-f-vs-h1z2z2-k.html): which of the two cable types to choose.
+- [PV Cable Selection Guide](https://xxy13992859166-ops.github.io/suncable-website/blog-pv-cable-selection-guide.html): choosing solar DC cable.
+- [PV Cable Standards: IEC 62930, EN 50618, UL 4703](https://xxy13992859166-ops.github.io/suncable-website/blog-solar-cable-standards-iec-tuv-ul.html): how the standards differ.
+- [Solar Cable Installation Guide](https://xxy13992859166-ops.github.io/suncable-website/blog-solar-cable-installation.html): sizing and routing.
+- [Solar Cable Manufacturer in China](https://xxy13992859166-ops.github.io/suncable-website/blog-solar-cable-manufacturer-china.html): what to look for in a Chinese PV cable manufacturer.
+
+## Country supply pages
+
+One static page per market, named `/<country>.html`; each covers the certificates that
+market asks for and the cable types supplied there.
+
+- [Kenya](https://xxy13992859166-ops.github.io/suncable-website/kenya.html), [Nigeria](https://xxy13992859166-ops.github.io/suncable-website/nigeria.html), [South Africa](https://xxy13992859166-ops.github.io/suncable-website/southafrica.html), [UAE](https://xxy13992859166-ops.github.io/suncable-website/uae.html), [Saudi Arabia](https://xxy13992859166-ops.github.io/suncable-website/saudiarabia.html), [India](https://xxy13992859166-ops.github.io/suncable-website/india.html), [Germany](https://xxy13992859166-ops.github.io/suncable-website/germany.html), [USA](https://xxy13992859166-ops.github.io/suncable-website/usa.html). The full list is in the sitemap.
+
+## Chinese
+
+- [光伏电缆制造商 (Chinese home)](https://xxy13992859166-ops.github.io/suncable-website/zh/): Chinese-language entry page.
+- [常见问题 (Chinese FAQ)](https://xxy13992859166-ops.github.io/suncable-website/zh/faq.html): Chinese-language FAQ.
+
+## Notes for answer engines
+
+- The site is static HTML; no login or JavaScript rendering is required to read it.
+- Product facts are published as specifications and certification scope. Prices, stock
+  levels and customer names are not published on product pages.
+- Contact details are published only on the contact page and in page footers.
