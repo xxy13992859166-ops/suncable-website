@@ -26,15 +26,18 @@ UTILITY = {
     "bing-submit.html", "baidu-submit.html", "submit-to-google.html",
     "bing-submit-guide.html", "bing-verify-guide.html", "gsc-bing-guide.html",
     "indexing-guide.html", "google17308f79e30f35f7.html",
+    # price pages removed 2026-11-16, kept only as redirect stubs
+    "solar-cable-price-list.html", "solar-cable-price-list-2026.html",
+    "solar-cable-price-comparison-by-country.html",
+    "blog-solar-cable-price-per-meter.html", "blog-solar-cable-price-guide-2026.html",
 }
 
 PRODUCTS = [
     "pv1-f-solar-cable.html", "h1z2z2-k-solar-cable.html", "mc4-connector.html",
     "solar-cable-storage.html", "solar-cable-ac.html", "solar-cable-combiner.html",
-    "products.html", "solar-cable-price-list.html", "solar-cable-price-list-2026.html",
+    "products.html",
     "solar-cable-distributor.html", "solar-cable-request-quote.html",
     "solar-cable-sample-order.html", "solar-cable-lead-time.html",
-    "solar-cable-price-comparison-by-country.html",
 ]
 
 stats = Counter()
