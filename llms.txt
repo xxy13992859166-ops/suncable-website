@@ -6,7 +6,7 @@
 - Primary language: English. Chinese section: https://xxy13992859166-ops.github.io/suncable-website/zh/
 - Page index for crawlers: https://xxy13992859166-ops.github.io/suncable-website/sitemap.xml
 - Human-readable index of every page: https://xxy13992859166-ops.github.io/suncable-website/site-map.html
-- Last reviewed: 2026-11-12
+- Last reviewed: 2026-11-19
 
 Every statement below is taken from the linked page. Product pages state standard, rated
 voltage, conductor, insulation and certification; price and lead time are answered per
@@ -43,6 +43,7 @@ project through the quote page.
 
 ## Knowledge centre
 
+- [Solar Cable Installation Guide](https://xxy13992859166-ops.github.io/suncable-website/solar-cable-installation-guide.html): five-step on-site method - plan routes, mount cable clips, run the cables, fit MC4 connectors, label every run.
 - [Solar Cable Blog](https://xxy13992859166-ops.github.io/suncable-website/blog.html): index of all guides and articles.
 - [PV1-F vs H1Z2Z2-K](https://xxy13992859166-ops.github.io/suncable-website/blog-pv1-f-vs-h1z2z2-k.html): which of the two cable types to choose.
 - [PV Cable Selection Guide](https://xxy13992859166-ops.github.io/suncable-website/blog-pv-cable-selection-guide.html): choosing solar DC cable.
